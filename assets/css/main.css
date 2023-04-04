@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 10px;
+  background-color: #fff;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+  height: 100vh;
+  width: 100vh;
+  position: relative;
+  z-index: 2
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #ffffff;
+  color: #000000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 997
+}
+
+.nav-item {
+  width: 20%;
+  text-align: center;
+  cursor: pointer;
+  z-index: 998;
+  height: 50px;
+  max-width: 50px;
+}
+
+.nav-item.active {
+  background-color: #DFDFDF;
+}
+
+.nav-item:not(.active) {
+  background-color: #FFFFFF;
+}
+
+.nav-item::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 500%;
+  transition: transform 0.3s ease-out;
+}
+
+.page {
+  height: 100%;
+  width: 20%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
