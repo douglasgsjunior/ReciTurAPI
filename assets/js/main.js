@@ -43,7 +43,7 @@ function initMap() {
       }
     ],
     fullscreenControl: false,
-    gestureHandling: "greedy" // Permitir zoom apenas com toque em dispositivos móveis
+    zoomControl: false // Remove os botões de zoom
   });
 }
 
