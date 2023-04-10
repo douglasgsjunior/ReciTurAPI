@@ -28,26 +28,48 @@ navItems.forEach((item) => {
 
 // Cria o mapa e o insere na página
 function initMap() {
-  const center = { lat: -8.0555435, lng: -34.8806205 }; // Coordenadas do centro de São Paulo
-  const map = new google.maps.Map(document.getElementById("map"), {
+  const mapElement = document.getElementById("map");
+  const options = {
     zoom: 16,
-    center: center,
-    streetViewControl: false, // Remove a opção de Street View
-    mapTypeControl: false, // Remove a opção de visualização de satélite
+    streetViewControl: false,
+    mapTypeControl: false,
     styles: [
       {
         featureType: "poi",
         stylers: [
-          { visibility: "off" } // Define a visibilidade dos POIs como "off"
+          { visibility: "off" }
         ]
       }
     ],
     fullscreenControl: false,
-    zoomControl: false // Remove os botões de zoom
-  });
-}
+    zoomControl: false
+  };
+  const map = new google.maps.Map(mapElement, options);
 
-// Espera a página carregar e então inicializa o mapa
-window.onload = () => {
-  initMap();
-};
+  // Verifica se o navegador suporta geolocalização
+  if (navigator.geolocation) {
+    // Obtém a posição do usuário
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        // Define as coordenadas da posição do usuário
+        const userPosition = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        // Reposiciona o mapa para a posição do usuário
+        map.setCenter(userPosition);
+        // Cria um marcador para indicar a posição do usuário
+        new google.maps.Marker({
+          position: userPosition,
+          map: map,
+          title: "Sua localização"
+        });
+      },
+      error => {
+        console.error("Erro ao obter a localização do usuário:", error);
+      }
+    );
+  } else {
+    console.error("Geolocalização não suportada pelo navegador.");
+  }
+}
