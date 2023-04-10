@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minha PWA</title>
+    <title>API Google Maps</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIjn7yc2qdAWYWozx6OpupHdsv0yDFDIs&libraries=places"></script>
   </head>
@@ -31,4 +31,34 @@
     </div>
     <script src="assets/js/main.js"></script>
   </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>API Google Maps</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIjn7yc2qdAWYWozx6OpupHdsv0yDFDIs&libraries=places"></script>
+    </head>
+    <body>
+        <div class="page-container-class" id="pages">
+            <div class="page-class" id="page1">
+                <div id="map"></div>
+            </div>
+            <div class="page-class" id="page2">Página 2</div>
+            <div class="page-class" id="page3">Página 3</div>
+            <div class="page-class" id="page4">Página 4</div>
+        </div>
+        <div class="navbar-class" id="navbar">
+            <button class="navbar-button-class active" id="page1NavbarButton" data-page="page1"><i class="fas fa-home"></i></button>
+            <button class="navbar-button-class"        id="page2NavbarButton" data-page="page2"><i class="fas fa-list"></i></button>
+            <button class="navbar-button-class"        id="page3NavbarButton" data-page="page3"><i class="fas fa-map" ></i></button>
+            <button class="navbar-button-class"        id="page4NavbarButton" data-page="page4"><i class="fas fa-user"></i></button>
+        </div>    
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>

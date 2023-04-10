@@ -1,68 +1,29 @@
-// Cria uma instância do objeto Autocomplete
-const autocomplete = new google.maps.places.Autocomplete(document.getElementById("search-input"));
+// Barra de navegação
 
-// Define o raio de busca como 10km
-autocomplete.setFields(["address_components", "geometry", "name"]);
-autocomplete.setOptions({
-  radius: 10000,
-});
-
-autocomplete.addListener("place_changed", () => {
-  const place = autocomplete.getPlace();
-
-  if (!place.geometry) {
-    alert("Nenhuma localização selecionada!");
-    return;
-  }
-
-  // Centraliza o mapa na localização selecionada
-  map.setCenter(place.geometry.location);
-});
-
-const navItems = document.querySelectorAll(".nav-item");
-const pages = document.querySelectorAll(".page");
-const homePage = document.getElementById("home");
-
-// Adiciona a classe "active" ao botão da página principal
-document.querySelector("[data-page='home']").classList.add("active");
-
-// Move o scroll para a página principal ao iniciar a aplicação
-document.querySelector(".container").scrollTo({
-  left: homePage.offsetLeft,
-  behavior: "smooth",
-});
-
+// Objetos
+const navItems = document.querySelectorAll(".navbar-button-class");
+const pages = {
+    page1: document.getElementById("page1"),
+    page2: document.getElementById("page2"),
+    page3: document.getElementById("page3"),
+    page4: document.getElementById("page4"),
+};
+// Esconde todas as páginas e mostra a página 1
+Object.values(pages).forEach((page) => (page.style.display = "none"));
+pages["page1"].style.display = "block";
+// Define o evento de clique para cada botão da barra de navegação
 navItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    const pageName = item.getAttribute("data-page");
-    const page = document.getElementById(pageName);
-    const pagePosition = page.offsetLeft;
-    document.querySelector(".container").scrollTo({
-      left: pagePosition,
-      behavior: "smooth",
+    item.addEventListener("click", (e) => {
+        // Remove a classe "active" de todos os botões da barra de navegação
+        navItems.forEach((navItem) => navItem.classList.remove("active"));
+        // Adiciona a classe "active" apenas ao botão clicado
+        e.currentTarget.classList.add("active");
+        // Esconde todas as páginas
+        Object.values(pages).forEach((page) => (page.style.display = "none"));
+        // Mostra a página correspondente ao botão clicado
+        const pageToShow = e.currentTarget.dataset.page;
+        pages[pageToShow].style.display = "block";
     });
-  });
-});
-
-let isDragging = false;
-let startPosition = 0;
-let currentTranslate = 0;
-
-document.querySelector(".container").addEventListener("mousedown", (event) => {
-  isDragging = true;
-  startPosition = event.pageX;
-  currentTranslate = document.querySelector(".container").scrollLeft;
-});
-
-document.querySelector(".container").addEventListener("mouseup", () => {
-  isDragging = false;
-});
-
-document.querySelector(".container").addEventListener("mousemove", (event) => {
-  if (!isDragging) return;
-  const currentPosition = event.pageX;
-  const diff = currentPosition - startPosition;
-  document.querySelector(".container").scrollLeft = currentTranslate - diff;
 });
 
 // Cria o mapa e o insere na página
