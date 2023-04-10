@@ -42,7 +42,8 @@ function initMap() {
         ]
       }
     ],
-    fullscreenControl: false
+    fullscreenControl: false,
+    gestureHandling: "greedy" // Permitir zoom apenas com toque em dispositivos móveis
   });
 }
 
