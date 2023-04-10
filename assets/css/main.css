@@ -48,3 +48,9 @@
     text-align: center; place-items: center;
 	width: 100vw; height: 100vh;
 }
+.geo {
+	color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    text-align: center; place-items: center;
+    width: 25%; height: 25%;
+}
