@@ -30,13 +30,13 @@
     width: 100vw; height: 6vh;
 }
 .navbar-button-class {
-    color: rgba(0, 0, 0, 1); background-color: rgba(251, 251, 251, 1);
+    color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
     text-align: center; place-items: center;
     width: 25%; height: 100%;
 }
 .navbar-button-class.active {
-    color: rgba(0, 0, 0, 1); background-color: rgba(243, 243, 243, 1);
+    color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
 }
 .fa-home, .fa-list, .fa-map, .fa-user {
     color: rgba(127, 127, 127, 1); background-color: transparent;
