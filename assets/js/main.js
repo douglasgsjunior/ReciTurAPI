@@ -28,7 +28,7 @@ navItems.forEach((item) => {
 
 // Cria o mapa e o insere na página
 function initMap() {
-  const center = { lat: -23.550520, lng: -46.633308 }; // Coordenadas do centro de São Paulo
+  const center = { lat: -8.043303, lng: -35.0166193 }; // Coordenadas do centro de São Paulo
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,
     center: center,
