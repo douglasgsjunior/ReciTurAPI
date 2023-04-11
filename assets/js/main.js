@@ -57,22 +57,6 @@ function initMap() {
         url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
       }
     });
-    const btnPosition = document.getElementById("btn-position");
-    btnPosition.addEventListener("click", () => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const userLocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-          userMarker.setPosition(userLocation);
-          map.setCenter(userLocation);
-        },
-        (error) => {
-          console.log("Error getting location:", error);
-        }
-      );
-    });
     navigator.geolocation.watchPosition(
       (position) => {
         const userLocation = {
@@ -95,3 +79,22 @@ function initMap() {
 window.onload = () => {
   initMap();
 };
+
+const locationBtn = document.getElementById("location-btn");
+
+locationBtn.addEventListener("click", () => {
+  if (navigator.permissions) {
+    navigator.permissions.query({ name: "geolocation" }).then((result) => {
+      if (result.state === "granted") {
+        console.log("Geolocation is already enabled");
+      } else if (result.state === "prompt") {
+        console.log("Geolocation permission is prompted");
+        navigator.geolocation.getCurrentPosition(() => {}, () => {}, {});
+      } else {
+        console.log("Geolocation is not allowed");
+      }
+    });
+  } else {
+    console.log("Geolocation is not supported by this browser");
+  }
+});
