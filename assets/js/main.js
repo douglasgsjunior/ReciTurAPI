@@ -54,7 +54,7 @@ function getLocation() {
       timeout: 10000, // 10 segundos
       maximumAge: 5000 // 5 segundos
     };
-    navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.watchPosition(
       (position) => {
         const userLocation = {
           lat: position.coords.latitude,
