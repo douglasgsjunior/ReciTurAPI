@@ -79,3 +79,22 @@ function initMap() {
 window.onload = () => {
   initMap();
 };
+
+const locationBtn = document.getElementById("location-btn");
+
+locationBtn.addEventListener("click", () => {
+  if (navigator.permissions) {
+    navigator.permissions.query({ name: "geolocation" }).then((result) => {
+      if (result.state === "granted") {
+        console.log("Geolocation is already enabled");
+      } else if (result.state === "prompt") {
+        console.log("Geolocation permission is prompted");
+        navigator.geolocation.getCurrentPosition(() => {}, () => {}, {});
+      } else {
+        console.log("Geolocation is not allowed");
+      }
+    });
+  } else {
+    console.log("Geolocation is not supported by this browser");
+  }
+});
