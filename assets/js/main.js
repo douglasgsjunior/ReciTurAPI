@@ -79,3 +79,8 @@ function getLocation() {
     console.log("Geolocation is not supported by this browser.");
   }
 }
+
+// Espera a página carregar e então inicializa o mapa
+window.onload = () => {
+  initMap();
+};
