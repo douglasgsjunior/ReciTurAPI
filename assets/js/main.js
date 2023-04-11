@@ -71,6 +71,12 @@ function initMap() {
       },
       options
     );
+    const clearLocationButton = document.getElementById("clearLocationButton");
+
+    clearLocationButton.addEventListener("click", () => {
+      userMarker.setPosition(null);
+      map.setCenter(center);
+    });
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
