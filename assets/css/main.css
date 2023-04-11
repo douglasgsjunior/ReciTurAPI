@@ -69,3 +69,15 @@
     place-items: center;
     width: 90%; height: 90%;
 }
+.search-bar-class input[type="text"] {
+    box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5); /* Sombra na barra de navegação */
+    background-color: #ffffff; /* Cor de fundo */
+    border: none;
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    outline: none;
+    padding: 15px;
+    z-index: 990; /* Camada */
+  }
