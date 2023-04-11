@@ -45,61 +45,51 @@ function initMap() {
     zoomControl: false
   });
 
-  let watchId;
-  const userMarker = new google.maps.Marker({
-    map: map,
-    icon: {
-      url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-    }
-  });
-
-  const resetBtn = document.getElementById("location-btn");
-  resetBtn.addEventListener("click", () => {
-    navigator.permissions.revoke({ name: "geolocation" }).then(() => {
-      console.log("Geolocation permission is reset");
-      if (watchId) {
-        navigator.geolocation.clearWatch(watchId);
-        userMarker.setMap(null);
-        watchId = null;
+  if (navigator.geolocation) {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 5000
+    };
+    const userMarker = new google.maps.Marker({
+      map: map,
+      icon: {
+        url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
       }
     });
-  });
-  
-  const locationBtn = document.getElementById("location-btn");
-  locationBtn.addEventListener("click", () => {
-    if (navigator.permissions) {
-      navigator.permissions.query({ name: "geolocation" }).then((result) => {
-        if (result.state === "granted") {
-          console.log("Geolocation is already enabled");
-          watchId = navigator.geolocation.watchPosition(
-            (position) => {
-              const userLocation = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              };
-              userMarker.setPosition(userLocation);
-              map.setCenter(userLocation);
-            },
-            (error) => {
-              console.log("Error getting location:", error);
-            },
-            {
-              enableHighAccuracy: true,
-              timeout: 10000,
-              maximumAge: 5000
-            }
-          );
-        } else if (result.state === "prompt") {
-          console.log("Geolocation permission is prompted");
-          navigator.geolocation.getCurrentPosition(() => {}, () => {}, {});
-        } else {
-          console.log("Geolocation is not allowed");
+    const btnPosition = document.getElementById("btn-position");
+    btnPosition.addEventListener("click", () => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          userMarker.setPosition(userLocation);
+          map.setCenter(userLocation);
+        },
+        (error) => {
+          console.log("Error getting location:", error);
         }
-      });
-    } else {
-      console.log("Geolocation is not supported by this browser");
-    }
-  });
+      );
+    });
+    navigator.geolocation.watchPosition(
+      (position) => {
+        const userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        userMarker.setPosition(userLocation);
+        map.setCenter(userLocation);
+      },
+      (error) => {
+        console.log("Error getting location:", error);
+      },
+      options
+    );
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
 }
 
 window.onload = () => {
