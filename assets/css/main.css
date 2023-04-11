@@ -60,7 +60,7 @@
     display: flex;
     left: 0; top: 0; z-index: 1;
     position: fixed;
-    place-items: center;
+    justify-content: center;
     width: 100vw; height: 6vh;
 }
 .search-bar-class input[type="text"] {
