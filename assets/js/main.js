@@ -26,66 +26,56 @@ navItems.forEach((item) => {
     });
 });
 
-// Cria o mapa e o insere na página
 function initMap() {
-  const center = { lat: -8.0555435, lng: -34.8806205 }; // Coordenadas do centro de São Paulo
+  const center = { lat: -8.0555435, lng: -34.8806205 };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 16,
     center: center,
-    streetViewControl: false, // Remove a opção de Street View
-    mapTypeControl: false, // Remove a opção de visualização de satélite
+    streetViewControl: false,
+    mapTypeControl: false,
     styles: [
       {
         featureType: "poi",
         stylers: [
-          { visibility: "off" } // Define a visibilidade dos POIs como "off"
+          { visibility: "off" }
         ]
       }
     ],
     fullscreenControl: false,
-    zoomControl: false // Remove os botões de zoom
+    zoomControl: false
   });
-}
 
-function getLocation() {
   if (navigator.geolocation) {
     const options = {
       enableHighAccuracy: true,
-      timeout: 10000, // 10 segundos
-      maximumAge: 5000 // 5 segundos
+      timeout: 10000,
+      maximumAge: 5000
     };
+    const userMarker = new google.maps.Marker({
+      map: map,
+      icon: {
+        url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+      }
+    });
     navigator.geolocation.watchPosition(
       (position) => {
         const userLocation = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 16,
-          center: userLocation,
-          streetViewControl: false,
-          mapTypeControl: false,
-          styles: [
-            {
-              featureType: "poi",
-              stylers: [{ visibility: "off" }],
-            },
-          ],
-          fullscreenControl: false,
-          zoomControl: false,
-        });
+        userMarker.setPosition(userLocation);
+        map.setCenter(userLocation);
       },
       (error) => {
         console.log("Error getting location:", error);
       },
-      options // Passa as opções como terceiro parâmetro
+      options
     );
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
 }
 
-// Espera a página carregar e então inicializa o mapa
 window.onload = () => {
   initMap();
 };
