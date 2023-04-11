@@ -57,6 +57,22 @@ function initMap() {
         url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
       }
     });
+    const btnPosition = document.getElementById("btn-position");
+    btnPosition.addEventListener("click", () => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          userMarker.setPosition(userLocation);
+          map.setCenter(userLocation);
+        },
+        (error) => {
+          console.log("Error getting location:", error);
+        }
+      );
+    });
     navigator.geolocation.watchPosition(
       (position) => {
         const userLocation = {
