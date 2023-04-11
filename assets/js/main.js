@@ -48,6 +48,8 @@ function initMap() {
   if (navigator.geolocation) {
     const options = {
       enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 5000
     };
     const userMarker = new google.maps.Marker({
       map: map,
