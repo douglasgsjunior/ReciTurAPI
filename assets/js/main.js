@@ -56,7 +56,7 @@ function getLocation() {
           lng: position.coords.longitude,
         };
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 16,
+          zoom: 18,
           center: userLocation,
           streetViewControl: false,
           mapTypeControl: false,
@@ -90,7 +90,7 @@ function showPosition(position) {
   var lng = position.coords.longitude;
   var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: lat, lng: lng},
-      zoom: 18
+      zoom: 16
   });
   var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
