@@ -50,12 +50,6 @@
     text-align: center; justify-content: center; align-items: center;
 	width: 100vw; height: 100vh;
 }
-.geo {
-	color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
-    cursor: pointer;
-    text-align: center; justify-content: center; align-items: center;
-    width: 25%; height: 25%;
-}
 .search-bar-container-class {
     color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
     display: flex;
@@ -92,8 +86,27 @@
     padding: 10px;
 }
 .fa-crosshairs, .fa-map-marked-alt {
-    margin: 5px;
+    color: rgba(0, 0, 127, 1); background-color: transparent;
+}
+.geolocation-permission-class {
+    color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
+    border: none;
     width: 10%; height: 70%;
-    color: rgba(0, 0, 127, 1); background-color: rgba(0, 127, 255, 1);
+    box-sizing: border-box;
     border-radius: 5px;
+    justify-content: center; align-items: center;
+    flex-direction: row;
+    display: flex;
+    margin: 5px;
+}
+.routes-class {
+    color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
+    border: none;
+    width: 10%; height: 70%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center; align-items: center;
+    flex-direction: row;
+    display: flex;
+    margin: 5px;
 }
