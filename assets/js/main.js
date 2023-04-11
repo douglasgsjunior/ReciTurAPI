@@ -56,7 +56,7 @@ function getLocation() {
           lng: position.coords.longitude,
         };
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 18,
+          zoom: 16,
           center: userLocation,
           streetViewControl: false,
           mapTypeControl: false,
