@@ -68,7 +68,7 @@
     justify-content: center; align-items: center;
     flex-direction: row;
     display: flex;
-    margin: 2%;
+    margin: 1.5%;
 }
 .search-bar-class input[type="text"] {
     background-color: transparent; /* Cor de fundo */
@@ -94,7 +94,7 @@
     justify-content: center; align-items: center;
     flex-direction: row;
     display: flex;
-    margin: 2%;
+    margin: 1.5%;
 }
 .routes-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
@@ -105,7 +105,7 @@
     justify-content: center; align-items: center;
     flex-direction: row;
     display: flex;
-    margin: 2%;
+    margin: 1.5%;
 }
 .fa-crosshairs, .fa-map-marked-alt {
     color: rgba(63, 95, 127, 1); background-color: transparent;
