@@ -63,6 +63,7 @@
     position: fixed;
     justify-content: center; align-items: center;
     width: 100vw; height: 6vh;
+    flex-direction: row;
 }
 .search-bar-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
@@ -71,12 +72,14 @@
     box-sizing: border-box;
     border-radius: 15px;
     justify-content: center; align-items: center;
+    flex-direction: row;
 }
 .search-bar-class input[type="text"] {
     background-color: transparent; /* Cor de fundo */
     border: none;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
     padding: 15px;
     justify-content: center; align-items: center;
 }
