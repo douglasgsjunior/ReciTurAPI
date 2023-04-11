@@ -87,29 +87,18 @@ locationBtn.addEventListener("click", () => {
     navigator.permissions.query({ name: "geolocation" }).then((result) => {
       if (result.state === "granted") {
         console.log("Geolocation is already enabled");
-      } else if (result.state === "prompt") {
-        const options = {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 5000
-        };
-        const userMarker = new google.maps.Marker({
-          map: map,
-          icon: {
-            url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-          }
+        navigator.geolocation.getCurrentPosition((position) => {
+          const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          map.setCenter(userLocation);
+        }, (error) => {
+          console.log("Error getting location:", error);
         });
-        navigator.geolocation.watchPosition(
-          (position) => {
-            const userLocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            };
-            userMarker.setPosition(userLocation);
-            map.setCenter(userLocation);
-          },
-          options
-        );
+      } else if (result.state === "prompt") {
+        console.log("Geolocation permission is prompted");
+        navigator.geolocation.getCurrentPosition(() => {}, () => {}, {});
       } else {
         console.log("Geolocation is not allowed");
       }
