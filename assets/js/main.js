@@ -44,6 +44,27 @@ function initMap() {
     fullscreenControl: false,
     zoomControl: false
   });
+  // Adicione um novo marcador ao mapa
+  const newMarker = new google.maps.Marker({
+    position: { lat: -8.056812, lng: -34.880047 },
+    map: map,
+    icon: {
+      url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+    },
+  });
+
+  // Defina o nome do ponto
+  const newPointName = "Meu novo ponto";
+
+  // Crie uma nova janela de informações para o marcador
+  const infoWindow = new google.maps.InfoWindow({
+    content: newPointName,
+  });
+
+  // Adicione um evento de clique ao marcador
+  newMarker.addListener("click", () => {
+    infoWindow.open(map, newMarker);
+  });
 
   if (navigator.geolocation) {
     const options = {
@@ -85,3 +106,55 @@ function initMap() {
 window.onload = () => {
   initMap();
 };
+
+
+
+
+
+
+
+
+
+// Crie um objeto que representa o ponto, contendo latitude, longitude, nome e categoria
+const newPoint = {
+  lat: -8.056812,
+  lng: -34.880047,
+  name: "Meu novo ponto",
+  category: "Café",
+};
+
+// Crie uma nova variável que armazena uma lista de pontos, cada um com sua categoria
+const pointsByCategory = {
+  "Café": [newPoint],
+  "Restaurantes": [],
+  "Atrações turísticas": [],
+};
+
+// Adicione o ponto ao final da lista de pontos correspondente à sua categoria
+pointsByCategory[newPoint.category].push(newPoint);
+
+// Crie um novo objeto que representa a categoria, contendo um nome e a lista de pontos correspondente
+const categories = [
+  {
+    name: "Café",
+    points: pointsByCategory["Café"],
+  },
+  {
+    name: "Restaurantes",
+    points: pointsByCategory["Restaurantes"],
+  },
+  {
+    name: "Atrações turísticas",
+    points: pointsByCategory["Atrações turísticas"],
+  },
+];
+
+// Crie uma nova janela de informações para o marcador, contendo o nome e a categoria do ponto
+const infoWindow = new google.maps.InfoWindow({
+  content: `${newPoint.name}<br>${newPoint.category}`,
+});
+
+// Adicione um evento de clique ao marcador para mostrar a janela de informações
+newMarker.addListener("click", () => {
+  infoWindow.open(map, newMarker);
+});
