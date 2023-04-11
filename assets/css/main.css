@@ -13,7 +13,7 @@
     color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
     display: flex;
     flex-direction: column;
-    text-align: center; place-items: center;
+    text-align: center; justify-content: center; align-items: center;
 }
 .page-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
@@ -26,13 +26,13 @@
     display: flex;
     left: 0; bottom: 0; z-index: 1;
     position: fixed;
-    text-align: center; place-items: center;
+    text-align: center; justify-content: center; align-items: center;
     width: 100vw; height: 6vh;
 }
 .navbar-button-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
-    text-align: center; place-items: center;
+    text-align: center; justify-content: center; align-items: center;
     width: 25%; height: 100%;
 }
 .navbar-button-class.active {
@@ -46,13 +46,13 @@
     color: rgba(0, 0, 0, 1); background-color: transparent;
 }
 .map-class {
-    text-align: center; place-items: center;
+    text-align: center; justify-content: center; align-items: center;
 	width: 100vw; height: 100vh;
 }
 .geo {
 	color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
-    text-align: center; place-items: center;
+    text-align: center; justify-content: center; align-items: center;
     width: 25%; height: 25%;
 }
 .search-bar-class {
@@ -60,7 +60,7 @@
     display: flex;
     left: 0; top: 0; z-index: 1;
     position: fixed;
-    justify-content: center;
+    justify-content: center; align-items: center;
     width: 100vw; height: 6vh;
 }
 .search-bar-class input[type="text"] {
