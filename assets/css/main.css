@@ -107,6 +107,3 @@
     display: flex;
     margin: 1.5%;
 }
-.fa-crosshairs, .fa-map-marked-alt {
-    color: rgba(63, 95, 127, 1); background-color: transparent;
-}
