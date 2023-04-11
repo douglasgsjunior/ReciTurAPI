@@ -73,6 +73,7 @@
     border-radius: 15px;
     justify-content: center; align-items: center;
     flex-direction: row;
+    display: flex;
 }
 .search-bar-class input[type="text"] {
     background-color: transparent; /* Cor de fundo */
@@ -82,9 +83,10 @@
     box-sizing: border-box;
     padding: 15px;
     justify-content: center; align-items: center;
+    flex-direction: row;
+    display: flex;
 }
-/*.fa-search {
-    position: relative;
-    left: 0;
+.fa-search {
+    flex-direction: row;
+    display: flex;
 }
-*/
