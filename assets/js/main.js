@@ -26,8 +26,6 @@ navItems.forEach((item) => {
     });
 });
 
-let watchId;
-
 function initMap() {
   const center = { lat: -8.0555435, lng: -34.8806205 };
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -47,14 +45,6 @@ function initMap() {
     zoomControl: false
   });
 
-  const cancelButton = document.getElementById("cancel-button");
-  cancelButton.addEventListener("click", () => {
-    if (watchId) {
-      navigator.geolocation.clearWatch(watchId);
-      watchId = null;
-    }
-  });
-
   if (navigator.geolocation) {
     const options = {
       enableHighAccuracy: true,
@@ -67,7 +57,7 @@ function initMap() {
         url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
       }
     });
-    watchId = navigator.geolocation.watchPosition(
+    navigator.geolocation.watchPosition(
       (position) => {
         const userLocation = {
           lat: position.coords.latitude,
