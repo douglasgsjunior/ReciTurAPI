@@ -68,12 +68,13 @@
 .search-bar-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
     border: none;
-    width: 50%; height: 70%;
+    width: 60%; height: 70%;
     box-sizing: border-box;
     border-radius: 5px;
     justify-content: center; align-items: center;
     flex-direction: row;
     display: flex;
+    margin: 5px;
 }
 .search-bar-class input[type="text"] {
     background-color: transparent; /* Cor de fundo */
@@ -89,4 +90,10 @@
     flex-direction: row;
     display: flex;
     padding: 10px;
+}
+.fa-crosshairs, .fa-map-marked-alt {
+    margin: 5px;
+    width: 10%; height: 70%;
+    color: rgba(0, 0, 127, 1); background-color: rgba(0, 127, 255, 1);
+    border-radius: 5px;
 }
