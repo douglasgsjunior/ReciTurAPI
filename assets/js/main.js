@@ -59,19 +59,21 @@ function initMap() {
   // Defina informações extras sobre o ponto
   const newPointInfo = "Esta é uma descrição do meu novo ponto.";
 
-  // Crie uma nova janela de informações para o marcador
-  const infoWindow = new google.maps.InfoWindow({
-    content: `
-      <div class="test">
-        <h2>${newPointName}</h2>
-        <p>${newPointInfo}</p>
-      </div>
-    `,
-  });
+  // Encontre o elemento HTML que representa a seção inferior da tela
+  const bottomSection = document.getElementById("bottom-section");
 
   // Adicione um evento de clique ao marcador
   newMarker.addListener("click", () => {
-    infoWindow.open(map, newMarker);
+    // Crie um novo elemento HTML para as informações do marcador
+    const markerInfo = document.createElement("div");
+    markerInfo.innerHTML = `
+      <h2>${newPointName}</h2>
+      <p>${newPointInfo}</p>
+    `;
+
+    // Adicione as informações do marcador à seção inferior da tela
+    bottomSection.innerHTML = "";
+    bottomSection.appendChild(markerInfo);
   });
 
   if (navigator.geolocation) {
