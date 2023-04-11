@@ -74,6 +74,17 @@ function initMap() {
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
+  const resetBtn = document.getElementById("reset-btn");
+  resetBtn.addEventListener("click", () => {
+    navigator.permissions.revoke({ name: "geolocation" }).then(() => {
+      console.log("Geolocation permission is reset");
+      if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+        userMarker.setMap(null);
+        watchId = null;
+      }
+    });
+  });
 }
 
 window.onload = () => {
