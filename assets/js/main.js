@@ -30,7 +30,7 @@ navItems.forEach((item) => {
 function initMap() {
   const center = { lat: -8.0555435, lng: -34.8806205 }; // Coordenadas do centro de São Paulo
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 16,
+    zoom: 17,
     center: center,
     streetViewControl: false, // Remove a opção de Street View
     mapTypeControl: false, // Remove a opção de visualização de satélite
