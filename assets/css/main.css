@@ -83,3 +83,7 @@
     padding: 15px;
     justify-content: center; align-items: center;
 }
+.fa-search {
+    position: absolute; /* added */
+    left: 0; /* adjust as required */
+}
