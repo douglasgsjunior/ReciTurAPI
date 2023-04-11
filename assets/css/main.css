@@ -37,6 +37,7 @@
 }
 .navbar-button-class.active {
     color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
+    opacity: 0; animation: fade-in 1s forwards;
 }
 .fa-home, .fa-list, .fa-map, .fa-user {
     color: rgba(127, 127, 127, 1); background-color: transparent;
