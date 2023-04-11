@@ -81,7 +81,6 @@
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    padding: 15px;
     justify-content: center; align-items: center;
     flex-direction: row;
     display: flex;
@@ -89,4 +88,5 @@
 .fa-search {
     flex-direction: row;
     display: flex;
+    padding: 20px;
 }
