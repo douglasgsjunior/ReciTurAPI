@@ -49,6 +49,11 @@ function initMap() {
 
 function getLocation() {
   if (navigator.geolocation) {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 10000, // 10 segundos
+      maximumAge: 5000 // 5 segundos
+    };
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const userLocation = {
@@ -73,7 +78,7 @@ function getLocation() {
       (error) => {
         console.log("Error getting location:", error);
       },
-      { enableHighAccuracy: true }
+      options // Passa as opções como terceiro parâmetro
     );
   } else {
     console.log("Geolocation is not supported by this browser.");
