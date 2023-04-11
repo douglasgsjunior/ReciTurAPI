@@ -62,7 +62,7 @@
 .search-bar-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
     border: none;
-    width: 61%; height: 70%;
+    width: 64%; height: 70%;
     box-sizing: border-box;
     border-radius: 5px;
     justify-content: center; align-items: center;
