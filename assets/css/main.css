@@ -107,3 +107,11 @@
     display: flex;
     margin: 1.5%;
 }
+.test {
+    color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
+    display: flex;
+    left: 0; bottom: 0; z-index: 1;
+    position: fixed;
+    text-align: center; justify-content: center; align-items: center;
+    width: 100vw; height: 20vh;
+}

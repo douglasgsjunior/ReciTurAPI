@@ -62,7 +62,7 @@ function initMap() {
   // Crie uma nova janela de informações para o marcador
   const infoWindow = new google.maps.InfoWindow({
     content: `
-      <div>
+      <div class="test">
         <h2>${newPointName}</h2>
         <p>${newPointInfo}</p>
       </div>
