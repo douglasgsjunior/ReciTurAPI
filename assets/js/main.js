@@ -76,6 +76,12 @@ function initMap() {
   }
 }
 
+function loadMap() {
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCIjn7yc2qdAWYWozx6OpupHdsv0yDFDIs&libraries=places&callback=initMap`;
+  document.head.appendChild(script);
+}
+
 window.onload = () => {
-  initMap();
+  loadMap();
 };
