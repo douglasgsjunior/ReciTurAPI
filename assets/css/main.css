@@ -85,9 +85,6 @@
     display: flex;
     padding: 10px;
 }
-.fa-crosshairs, .fa-map-marked-alt {
-    color: rgba(0, 0, 127, 1); background-color: transparent;
-}
 .geolocation-permission-class {
     color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
     border: none;
@@ -109,4 +106,7 @@
     flex-direction: row;
     display: flex;
     margin: 5px;
+}
+.fa-crosshairs, .fa-map-marked-alt {
+    color: rgba(63, 95, 127, 1); background-color: transparent;
 }
