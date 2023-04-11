@@ -79,4 +79,5 @@
     width: 100%;
     box-sizing: border-box;
     padding: 15px;
+    justify-content: center; align-items: center;
 }
