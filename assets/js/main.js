@@ -47,6 +47,39 @@ function initMap() {
   });
 }
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 16,
+          center: userLocation,
+          streetViewControl: false,
+          mapTypeControl: false,
+          styles: [
+            {
+              featureType: "poi",
+              stylers: [{ visibility: "off" }],
+            },
+          ],
+          fullscreenControl: false,
+          zoomControl: false,
+        });
+      },
+      (error) => {
+        console.log("Error getting location:", error);
+      },
+      { enableHighAccuracy: true }
+    );
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
+
 // Espera a página carregar e então inicializa o mapa
 window.onload = () => {
   initMap();
