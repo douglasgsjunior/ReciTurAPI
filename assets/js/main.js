@@ -56,9 +56,17 @@ function initMap() {
   // Defina o nome do ponto
   const newPointName = "Meu novo ponto";
 
+  // Defina informações extras sobre o ponto
+  const newPointInfo = "Esta é uma descrição do meu novo ponto.";
+
   // Crie uma nova janela de informações para o marcador
   const infoWindow = new google.maps.InfoWindow({
-    content: newPointName,
+    content: `
+      <div>
+        <h2>${newPointName}</h2>
+        <p>${newPointInfo}</p>
+      </div>
+    `,
   });
 
   // Adicione um evento de clique ao marcador
