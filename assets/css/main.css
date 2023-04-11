@@ -55,19 +55,13 @@
     text-align: center; place-items: center;
     width: 25%; height: 25%;
 }
-.search-bar-container-class {
+.search-bar-class {
     color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
     display: flex;
     left: 0; top: 0; z-index: 1;
     position: fixed;
     place-items: center;
     width: 100vw; height: 6vh;
-}
-.search-bar-class {
-    color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 1);
-    display: flex;
-    place-items: center;
-    width: 90%; height: 90%;
 }
 .search-bar-class input[type="text"] {
     box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5); /* Sombra na barra de navegação */
