@@ -89,6 +89,50 @@ function initMap() {
     }
   });
 
+  // Adicione um novo marcador ao mapa
+  const newMarker2 = new google.maps.Marker({
+    position: { lat: -8.056820, lng: -34.880065 },
+    map: map,
+    icon: {
+      url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+    },
+  });
+
+  // Defina o nome do ponto
+  const newPointName2 = "Meu novo ponto2";
+
+  // Defina informações extras sobre o ponto
+  const newPointInfo2 = "Esta é uma descrição do meu novo ponto2.";
+
+  // Encontre o elemento HTML que representa a seção inferior da tela
+  const bottomSection2 = document.getElementById("bottom-section");
+
+  // Adicione um evento de clique ao marcador
+  newMarker.addListener("click", () => {
+    // Verifique se as informações do marcador estão visíveis
+    if (bottomSection2.innerHTML.trim() === "") {
+      // Crie um novo elemento HTML para as informações do marcador
+      const markerInfo = document.createElement("div");
+      markerInfo.innerHTML = `
+        <h2>${newPointName2}</h2>
+        <p>${newPointInfo2}</p>
+      `;
+
+      // Adicione as informações do marcador à seção inferior da tela
+      bottomSection2.innerHTML = "";
+      bottomSection2.appendChild(markerInfo);
+
+      // Exiba a seção inferior
+      bottomSection2.style.display = "block";
+    } else {
+      // Se as informações já estão visíveis, remova-as da seção inferior da tela
+      bottomSection2.innerHTML = "";
+
+      // Oculte a seção inferior
+      bottomSection2.style.display = "none";
+    }
+  });
+
   if (navigator.geolocation) {
     const options = {
       enableHighAccuracy: true,
@@ -129,55 +173,3 @@ function initMap() {
 window.onload = () => {
   initMap();
 };
-
-
-
-
-
-
-
-
-
-// Crie um objeto que representa o ponto, contendo latitude, longitude, nome e categoria
-const newPoint = {
-  lat: -8.056812,
-  lng: -34.880047,
-  name: "Meu novo ponto",
-  category: "Café",
-};
-
-// Crie uma nova variável que armazena uma lista de pontos, cada um com sua categoria
-const pointsByCategory = {
-  "Café": [newPoint],
-  "Restaurantes": [],
-  "Atrações turísticas": [],
-};
-
-// Adicione o ponto ao final da lista de pontos correspondente à sua categoria
-pointsByCategory[newPoint.category].push(newPoint);
-
-// Crie um novo objeto que representa a categoria, contendo um nome e a lista de pontos correspondente
-const categories = [
-  {
-    name: "Café",
-    points: pointsByCategory["Café"],
-  },
-  {
-    name: "Restaurantes",
-    points: pointsByCategory["Restaurantes"],
-  },
-  {
-    name: "Atrações turísticas",
-    points: pointsByCategory["Atrações turísticas"],
-  },
-];
-
-// Crie uma nova janela de informações para o marcador, contendo o nome e a categoria do ponto
-const infoWindow = new google.maps.InfoWindow({
-  content: `${newPoint.name}<br>${newPoint.category}`,
-});
-
-// Adicione um evento de clique ao marcador para mostrar a janela de informações
-newMarker.addListener("click", () => {
-  infoWindow.open(map, newMarker);
-});
