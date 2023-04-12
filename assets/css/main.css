@@ -139,7 +139,7 @@
         transform: translateY(100%);
     }
 }
-#bottom-section.none {
+#bottom-section.block {
     transform: translateY(100%);
     animation-name: slide-down;
     animation-duration: 1s;
