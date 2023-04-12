@@ -131,18 +131,3 @@
         transform: translateY(0%);
     }
 }
-@keyframes slide-down {
-    0% {
-        transform: translateY(0%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-#bottom-section.block {
-    transform: translateY(100%);
-    animation-name: slide-down;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
-}
