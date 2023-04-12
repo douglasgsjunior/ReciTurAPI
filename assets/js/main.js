@@ -44,6 +44,7 @@ function initMap() {
     fullscreenControl: false,
     zoomControl: false
   });
+
   // Adicione um novo marcador ao mapa
   const newMarker = new google.maps.Marker({
     position: { lat: -8.056812, lng: -34.880047 },
@@ -64,16 +65,22 @@ function initMap() {
 
   // Adicione um evento de clique ao marcador
   newMarker.addListener("click", () => {
-    // Crie um novo elemento HTML para as informações do marcador
-    const markerInfo = document.createElement("div");
-    markerInfo.innerHTML = `
-      <h2>${newPointName}</h2>
-      <p>${newPointInfo}</p>
-    `;
+    // Verifique se as informações do marcador estão visíveis
+    if (bottomSection.innerHTML.trim() === "") {
+      // Crie um novo elemento HTML para as informações do marcador
+      const markerInfo = document.createElement("div");
+      markerInfo.innerHTML = `
+        <h2>${newPointName}</h2>
+        <p>${newPointInfo}</p>
+      `;
 
-    // Adicione as informações do marcador à seção inferior da tela
-    bottomSection.innerHTML = "";
-    bottomSection.appendChild(markerInfo);
+      // Adicione as informações do marcador à seção inferior da tela
+      bottomSection.innerHTML = "";
+      bottomSection.appendChild(markerInfo);
+    } else {
+      // Se as informações já estão visíveis, remova-as da seção inferior da tela
+      bottomSection.innerHTML = "";
+    }
   });
 
   if (navigator.geolocation) {
