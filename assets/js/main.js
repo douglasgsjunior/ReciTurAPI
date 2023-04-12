@@ -77,9 +77,15 @@ function initMap() {
       // Adicione as informações do marcador à seção inferior da tela
       bottomSection.innerHTML = "";
       bottomSection.appendChild(markerInfo);
+
+      // Exiba a seção inferior
+      bottomSection.style.display = "block";
     } else {
       // Se as informações já estão visíveis, remova-as da seção inferior da tela
       bottomSection.innerHTML = "";
+
+      // Oculte a seção inferior
+      bottomSection.style.display = "none";
     }
   });
 
