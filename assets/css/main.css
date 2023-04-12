@@ -115,7 +115,7 @@
     background-color: white;
     padding: 10px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-    width: 100vw; height: 36vh;
+    width: 100vw; height: 30vh;
     display: none;
     transform: translateY(100%);
     animation-name: slide-up;
