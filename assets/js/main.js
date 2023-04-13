@@ -87,6 +87,9 @@ function initMap() {
       if (bottomSection.style.display === "block") {
         bottomSection.style.display = "none";
       }
+      if (bottomSection.style.display === "none") {
+        bottomSection.style.display = "block";
+      }
       // Mostrar informações do ponto
       map.setCenter(point.position);
       map.setZoom(20); // Defina o nível de zoom adequado aqui
