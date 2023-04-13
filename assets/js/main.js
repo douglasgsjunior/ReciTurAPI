@@ -74,14 +74,35 @@ function initMap() {
   const arrowNextButton = document.querySelector('.arrow-next');
   const arrowBackButton = document.querySelector('.arrow-back');
 
-  const categoryButtons = document.querySelectorAll('.page2-point');
-
   arrowNextButton.addEventListener('click', () => {
     currentCategoryIndex++;
     if (currentCategoryIndex >= categories.length) {
       currentCategoryIndex = 0;
     }
     cardText.textContent = categories[currentCategoryIndex];
+
+    // Seleciona os botões de categoria
+    const categoryButtons = document.querySelectorAll('.page2-point');
+
+    // Define a visibilidade dos botões de categoria correspondentes
+    categoryButtons.forEach((button) => {
+      if (button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+        button.style.display = 'block';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  });
+
+  arrowBackButton.addEventListener('click', () => {
+    currentCategoryIndex--;
+    if (currentCategoryIndex < 0) {
+      currentCategoryIndex = categories.length - 1;
+    }
+    cardText.textContent = categories[currentCategoryIndex];
+
+    // Seleciona os botões de categoria
+    const categoryButtons = document.querySelectorAll('.page2-point');
 
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
