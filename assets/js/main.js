@@ -45,57 +45,53 @@ function initMap() {
     zoomControl: false
   });
 
-  // Adicione um novo marcador ao mapa
-  const newMarker = new google.maps.Marker({
-    position: { lat: -8.056812, lng: -34.880047 },
-    map: map,
-    icon: {
-      url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+  // Defina as informações dos pontos
+  const points = [
+    {
+      name: "Meu novo ponto 1",
+      info: "Esta é uma descrição do meu novo ponto 1.",
+      position: { lat: -8.056812, lng: -34.880047 },
     },
-  });
+    {
+      name: "Meu novo ponto 2",
+      info: "Esta é uma descrição do meu novo ponto 2.",
+      position: { lat: -8.060012, lng: -34.881347 },
+    },
+    {
+      name: "Meu novo ponto 3",
+      info: "Esta é uma descrição do meu novo ponto 3.",
+      position: { lat: -8.055112, lng: -34.883047 },
+    },
+  ];
 
-  // Defina o nome do ponto
-  const newPointName = "Meu novo ponto";
+  // Itere sobre os pontos e adicione os marcadores ao mapa
+  points.forEach((point) => {
+    const newMarker = new google.maps.Marker({
+      position: point.position,
+      map: map,
+      icon: {
+        url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+      },
+    });
 
-  // Defina informações extras sobre o ponto
-  const newPointInfo = "Esta é uma descrição do meu novo ponto.";
+    newMarker.addListener("click", () => {
+      if (bottomSection.innerHTML.trim() === "") {
+        const markerInfo = document.createElement("div");
+        markerInfo.innerHTML = `
+          <h2>${point.name}</h2>
+          <p>${point.info}</p>
+        `;
 
-  // Encontre o elemento HTML que representa a seção inferior da tela
-  const bottomSection = document.getElementById("bottom-section");
-  const infoPage = document.getElementById("page2");
+        bottomSection.innerHTML = "";
+        bottomSection.appendChild(markerInfo);
 
-  // Crie um novo botão para mostrar as informações do ponto
-  const newButton = document.createElement("button");
-  newButton.innerHTML = "Ver informações";
-  newButton.addEventListener("click", () => {
-    // Mostrar informações do ponto
-  });
-  infoPage.appendChild(newButton);
+        bottomSection.style.display = "block";
+      } else {
+        bottomSection.innerHTML = "";
 
-  // Adicione um evento de clique ao marcador
-  newMarker.addListener("click", () => {
-    // Verifique se as informações do marcador estão visíveis
-    if (bottomSection.innerHTML.trim() === "") {
-      // Crie um novo elemento HTML para as informações do marcador
-      const markerInfo = document.createElement("div");
-      markerInfo.innerHTML = `
-        <h2>${newPointName}</h2>
-        <p>${newPointInfo}</p>
-      `;
-
-      // Adicione as informações do marcador à seção inferior da tela
-      bottomSection.innerHTML = "";
-      bottomSection.appendChild(markerInfo);
-
-      // Exiba a seção inferior
-      bottomSection.style.display = "block";
-    } else {
-      // Se as informações já estão visíveis, remova-as da seção inferior da tela
-      bottomSection.innerHTML = "";
-
-      // Oculte a seção inferior
-      bottomSection.style.display = "none";
-    }
+        bottomSection.style.display = "none";
+      }
+    });
   });
 
   if (navigator.geolocation) {
