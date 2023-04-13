@@ -51,18 +51,64 @@ function initMap() {
       name: "Meu novo ponto 1",
       info: "Esta é uma descrição do meu novo ponto 1.",
       position: { lat: -8.056812, lng: -34.880047 },
+      category: "Cinema"
     },
     {
       name: "Meu novo ponto 2",
       info: "Esta é uma descrição do meu novo ponto 2.",
       position: { lat: -8.060012, lng: -34.881347 },
+      category: "Parque"
     },
     {
       name: "Meu novo ponto 3",
       info: "Esta é uma descrição do meu novo ponto 3.",
       position: { lat: -8.055112, lng: -34.883047 },
+      category: "Igreja"
     },
   ];
+
+  const categories = ['Tudo', 'Cinema', 'Parque', 'Igreja'];
+  let currentCategoryIndex = 0;
+
+  const cardText = document.querySelector('.card-text');
+  const arrowNextButton = document.querySelector('.arrow-next');
+  const arrowBackButton = document.querySelector('.arrow-back');
+
+  const categoryButtons = document.querySelectorAll('.category-button');
+
+  arrowNextButton.addEventListener('click', () => {
+    currentCategoryIndex++;
+    if (currentCategoryIndex >= categories.length) {
+      currentCategoryIndex = 0;
+    }
+    cardText.textContent = categories[currentCategoryIndex];
+
+    // Define a visibilidade dos botões de categoria correspondentes
+    categoryButtons.forEach((button) => {
+      if (button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+        button.style.display = 'block';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  });
+
+  arrowBackButton.addEventListener('click', () => {
+    currentCategoryIndex--;
+    if (currentCategoryIndex < 0) {
+      currentCategoryIndex = categories.length - 1;
+    }
+    cardText.textContent = categories[currentCategoryIndex];
+
+    // Define a visibilidade dos botões de categoria correspondentes
+    categoryButtons.forEach((button) => {
+      if (button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+        button.style.display = 'block';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  });
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
@@ -189,29 +235,6 @@ function initMap() {
     console.log("Geolocation is not supported by this browser.");
   }
 }
-
-const categories = ['All', 'Category1', 'Category2', 'Category3', 'Category4', 'Category5'];
-let currentCategoryIndex = 0;
-  
-const cardText = document.querySelector('.card-text');
-const arrowNextButton = document.querySelector('.arrow-next');
-const arrowBackButton = document.querySelector('.arrow-back');
-  
-arrowNextButton.addEventListener('click', () => {
-  currentCategoryIndex++;
-  if (currentCategoryIndex >= categories.length) {
-    currentCategoryIndex = 0;
-  }
-  cardText.textContent = categories[currentCategoryIndex];
-});
-  
-arrowBackButton.addEventListener('click', () => {
-  currentCategoryIndex--;
-  if (currentCategoryIndex < 0) {
-    currentCategoryIndex = categories.length - 1;
-  }
-  cardText.textContent = categories[currentCategoryIndex];
-});
 
 window.onload = () => {
   initMap();
