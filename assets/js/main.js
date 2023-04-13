@@ -74,6 +74,8 @@ function initMap() {
       },
     });
 
+    const bottomSection = document.getElementById("bottom-section");
+
     newMarker.addListener("click", () => {
       if (bottomSection.innerHTML.trim() === "") {
         const markerInfo = document.createElement("div");
