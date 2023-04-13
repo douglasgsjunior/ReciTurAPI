@@ -64,6 +64,14 @@ function initMap() {
   const bottomSection = document.getElementById("bottom-section");
   const infoPage = document.getElementById("page2");
 
+  // Crie um novo botão para mostrar as informações do ponto
+  const newButton = document.createElement("button");
+  newButton.innerHTML = "Ver informações";
+  newButton.addEventListener("click", () => {
+    // Mostrar informações do ponto
+  });
+  infoPage.appendChild(newButton);
+
   // Adicione um evento de clique ao marcador
   newMarker.addListener("click", () => {
     // Verifique se as informações do marcador estão visíveis
@@ -78,14 +86,6 @@ function initMap() {
       // Adicione as informações do marcador à seção inferior da tela
       bottomSection.innerHTML = "";
       bottomSection.appendChild(markerInfo);
-
-      // Crie um novo botão para mostrar as informações do ponto
-      const newButton = document.createElement("button");
-      newButton.innerHTML = "Ver informações";
-      newButton.addEventListener("click", () => {
-        // Mostrar informações do ponto
-      });
-      infoPage.appendChild(newButton);
 
       // Exiba a seção inferior
       bottomSection.style.display = "block";
