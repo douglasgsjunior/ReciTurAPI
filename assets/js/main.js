@@ -78,6 +78,14 @@ function initMap() {
       bottomSection.innerHTML = "";
       bottomSection.appendChild(markerInfo);
 
+      // Crie um novo botão para mostrar as informações do ponto
+      const newButton = document.createElement("button");
+      newButton.innerHTML = "Ver informações";
+      newButton.addEventListener("click", () => {
+        // Mostrar informações do ponto
+      });
+      bottomSection.appendChild(newButton);
+
       // Exiba a seção inferior
       bottomSection.style.display = "block";
     } else {
@@ -86,50 +94,6 @@ function initMap() {
 
       // Oculte a seção inferior
       bottomSection.style.display = "none";
-    }
-  });
-
-  // Adicione um novo marcador ao mapa
-  const newMarker2 = new google.maps.Marker({
-    position: { lat: -8.057820, lng: -34.881065 },
-    map: map,
-    icon: {
-      url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-    },
-  });
-
-  // Defina o nome do ponto
-  const newPointName2 = "Meu novo ponto2";
-
-  // Defina informações extras sobre o ponto
-  const newPointInfo2 = "Esta é uma descrição do meu novo ponto2.";
-
-  // Encontre o elemento HTML que representa a seção inferior da tela
-  const bottomSection2 = document.getElementById("bottom-section");
-
-  // Adicione um evento de clique ao marcador
-  newMarker2.addListener("click", () => {
-    // Verifique se as informações do marcador estão visíveis
-    if (bottomSection2.innerHTML.trim() === "") {
-      // Crie um novo elemento HTML para as informações do marcador
-      const markerInfo = document.createElement("div");
-      markerInfo.innerHTML = `
-        <h2>${newPointName2}</h2>
-        <p>${newPointInfo2}</p>
-      `;
-
-      // Adicione as informações do marcador à seção inferior da tela
-      bottomSection2.innerHTML = "";
-      bottomSection2.appendChild(markerInfo);
-
-      // Exiba a seção inferior
-      bottomSection2.style.display = "block";
-    } else {
-      // Se as informações já estão visíveis, remova-as da seção inferior da tela
-      bottomSection2.innerHTML = "";
-
-      // Oculte a seção inferior
-      bottomSection2.style.display = "none";
     }
   });
 
