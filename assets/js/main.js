@@ -79,7 +79,7 @@ function initMap() {
 
     // Crie um novo botão para mostrar as informações do ponto
     const newButton = document.createElement("button");
-    newButton.innerHTML = "Ver informações";
+    newButton.innerHTML = point.name; // Alteração aqui
     newButton.addEventListener("click", () => {
       // Mostrar informações do ponto
     });
