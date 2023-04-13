@@ -51,7 +51,7 @@ function initMap() {
       name: "Meu novo ponto 1",
       info: "Esta é uma descrição do meu novo ponto 1.",
       position: { lat: -8.056812, lng: -34.880047 },
-      category: "Cinema"
+      category: "Tudo"
     },
     {
       name: "Meu novo ponto 2",
