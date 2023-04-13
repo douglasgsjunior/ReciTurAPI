@@ -53,7 +53,7 @@ function initMap() {
       position: { lat: -8.056812, lng: -34.880047 },
     },
     {
-      name: "Meu novo ponto 2",
+      name: "Meu novo ponto 4",
       info: "Esta é uma descrição do meu novo ponto 2.",
       position: { lat: -8.060012, lng: -34.881347 },
     },
