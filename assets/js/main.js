@@ -45,9 +45,7 @@ function initMap() {
     zoomControl: false
   });
 
-  const carousel = ['All', 'Category1', 'Category2', 'Category3'];
-  let currentCategoryIndex = 0;
-
+  // Defina as informações dos pontos
   const points = [
     {
       name: "Meu novo ponto 1",
@@ -68,48 +66,73 @@ function initMap() {
       category: "Igreja"
     },
   ];
-
+  
+  const carousel = ['Category1', 'Category2', 'Category3'];
+  let currentCategoryIndex = 0;
+  
   const cardText = document.querySelector('.card-text');
   const arrowNextButton = document.querySelector('.arrow-next');
   const arrowBackButton = document.querySelector('.arrow-back');
-  const categoryButtons = document.querySelectorAll('.page2-point');
-
+  
   arrowNextButton.addEventListener('click', () => {
     currentCategoryIndex++;
     if (currentCategoryIndex >= carousel.length) {
       currentCategoryIndex = 0;
     }
+    
+    // Verifica se a categoria atual do carrossel é "Category2"
+    if (carousel[currentCategoryIndex] === 'Category2') {
+      // Esconde o botão com a categoria "Parque"
+      points.forEach(point => {
+        if (point.category === 'Parque') {
+          const button = document.querySelector(`button[data-name="${point.name}"]`);
+          if (button) {
+            button.style.display = 'none';
+          }
+        }
+      });
+    } else {
+      // Mostra todos os botões novamente
+      points.forEach(point => {
+        const button = document.querySelector(`button[data-name="${point.name}"]`);
+        if (button) {
+          button.style.display = 'inline-block';
+        }
+      });
+    }
+    
     cardText.textContent = carousel[currentCategoryIndex];
-    filterPoints();
   });
-
+  
   arrowBackButton.addEventListener('click', () => {
     currentCategoryIndex--;
     if (currentCategoryIndex < 0) {
       currentCategoryIndex = carousel.length - 1;
     }
+    
+    // Verifica se a categoria atual do carrossel é "Category2"
+    if (carousel[currentCategoryIndex] === 'Category2') {
+      // Esconde o botão com a categoria "Parque"
+      points.forEach(point => {
+        if (point.category === 'Parque') {
+          const button = document.querySelector(`button[data-name="${point.name}"]`);
+          if (button) {
+            button.style.display = 'none';
+          }
+        }
+      });
+    } else {
+      // Mostra todos os botões novamente
+      points.forEach(point => {
+        const button = document.querySelector(`button[data-name="${point.name}"]`);
+        if (button) {
+          button.style.display = 'inline-block';
+        }
+      });
+    }
+    
     cardText.textContent = carousel[currentCategoryIndex];
-    filterPoints();
-  });
-
-  function filterPoints() {
-    const filteredPoints = currentCategoryIndex === 0 ? points : points.filter(point => point.category === carousel[currentCategoryIndex]);
-
-    // remove todos os marcadores existentes do mapa
-
-    // cria novos marcadores com base na lista filtrada de pontos
-
-  }
-
-  // adiciona evento de clique aos botões de categoria
-  categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      currentCategoryIndex = carousel.findIndex(category => category === button.textContent);
-      cardText.textContent = carousel[currentCategoryIndex];
-      filterPoints();
-    });
-  });
-
+  });  
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
