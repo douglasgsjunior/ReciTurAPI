@@ -87,8 +87,21 @@ function initMap() {
       if (bottomSection.style.display === "block") {
         bottomSection.style.display = "none";
       }
-      if (bottomSection.style.display === "none") {
+      if (bottomSection.innerHTML.trim() === "") {
+        const markerInfo = document.createElement("div");
+        markerInfo.innerHTML = `
+          <h2>${point.name}</h2>
+          <p>${point.info}</p>
+        `;
+
+        bottomSection.innerHTML = "";
+        bottomSection.appendChild(markerInfo);
+
         bottomSection.style.display = "block";
+      } else {
+        bottomSection.innerHTML = "";
+
+        bottomSection.style.display = "none";
       }
       // Mostrar informações do ponto
       map.setCenter(point.position);
