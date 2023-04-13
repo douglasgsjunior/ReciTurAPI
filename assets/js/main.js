@@ -84,26 +84,9 @@ function initMap() {
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
     newButton.addEventListener("click", () => {
       // Verificar se o bottom-section está visível e, se sim, ocultá-lo
-      if (bottomSection.innerHTML.trim() === "") {
-        const markerInfo = document.createElement("div");
-        markerInfo.innerHTML = `
-          <h2>${point.name}</h2>
-          <p>${point.info}</p>
-        `;
-
-        bottomSection.innerHTML = "";
-        bottomSection.appendChild(markerInfo);
-
-        bottomSection.style.display = "block";
-      } else {
-        bottomSection.innerHTML = "";
-
+      if (bottomSection.style.display === "block") {
         bottomSection.style.display = "none";
       }
-      // Mostrar informações do ponto
-      map.setCenter(point.position);
-      map.setZoom(20); // Defina o nível de zoom adequado aqui
-    
       // Verificar se a página atual é a "page2"
       if (pages["page2"].style.display === "block") {
         // Esconde a página 2
@@ -116,8 +99,30 @@ function initMap() {
         document.querySelectorAll(".navbar-button-class:not(#page1NavbarButton)").forEach((button) => {
           button.classList.remove("active");
         });
+
+        // Mostrar informações do ponto
+        map.setCenter(point.position);
+        map.setZoom(20); // Defina o nível de zoom adequado aqui
+
+        // Exibir a bottom-section
+        if (bottomSection.innerHTML.trim() === "") {
+          const markerInfo = document.createElement("div");
+          markerInfo.innerHTML = `
+            <h2>${point.name}</h2>
+            <p>${point.info}</p>
+          `;
+
+          bottomSection.innerHTML = "";
+          bottomSection.appendChild(markerInfo);
+
+          bottomSection.style.display = "block";
+        } else {
+          bottomSection.innerHTML = "";
+
+          bottomSection.style.display = "none";
+        }
       }
-    });    
+    });
     
     infoPage.appendChild(newButton);
 
