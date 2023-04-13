@@ -75,6 +75,7 @@ function initMap() {
     });
 
     const bottomSection = document.getElementById("bottom-section");
+    const infoPage = document.getElementById("page2");
 
     // Crie um novo botão para mostrar as informações do ponto
     const newButton = document.createElement("button");
