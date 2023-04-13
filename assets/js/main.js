@@ -78,16 +78,32 @@ function initMap() {
     const infoPage = document.getElementById("page2");
 
     // Crie um novo botão para mostrar as informações do ponto
-    const newButton = document.createElement("button");
-    newButton.innerHTML = point.name; // Alteração aqui
-    newButton.className = 'page2-point'
-    newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
-    newButton.addEventListener("click", () => {
-      // Mostrar informações do ponto
-      map.setCenter(point.position);
-      map.setZoom(15); // Defina o nível de zoom adequado aqui
-    });
-    infoPage.appendChild(newButton);
+  const newButton = document.createElement("button");
+  newButton.innerHTML = point.name; // Alteração aqui
+  newButton.className = 'page2-point'
+  newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
+  newButton.addEventListener("click", () => {
+    // Mostrar informações do ponto
+    map.setCenter(point.position);
+    map.setZoom(15); // Defina o nível de zoom adequado aqui
+  });
+  infoPage.appendChild(newButton);
+
+  // Verifica se há um parâmetro "point" na URL e se o ID do ponto é o mesmo que o parâmetro
+  const urlParams = new URLSearchParams(window.location.search);
+  const pointId = urlParams.get('point');
+  if (pointId === newButton.id) {
+    map.setCenter(point.position);
+    map.setZoom(15); // Defina o nível de zoom adequado aqui
+  }
+
+  // Adiciona um ouvinte de evento de clique no botão para redirecionar para a página 1 com o ponto selecionado
+  newButton.addEventListener("click", () => {
+    const buttonId = point.name.replace(/\s+/g, '-').toLowerCase() + '-button';
+    const button = document.querySelector('#' + buttonId);
+    button.click();
+    window.location.href = `page1.html?point=${buttonId}`;
+  });
 
     newMarker.addListener("click", () => {
       if (bottomSection.innerHTML.trim() === "") {
