@@ -190,6 +190,29 @@ function initMap() {
   }
 }
 
+const categories = ['All', 'Category1', 'Category2', 'Category3', 'Category4', 'Category5'];
+let currentCategoryIndex = 0;
+  
+const cardText = document.querySelector('.card-text');
+const arrowNextButton = document.querySelector('.arrow-next');
+const arrowBackButton = document.querySelector('.arrow-back');
+  
+arrowNextButton.addEventListener('click', () => {
+  currentCategoryIndex++;
+  if (currentCategoryIndex >= categories.length) {
+    currentCategoryIndex = 0;
+  }
+  cardText.textContent = categories[currentCategoryIndex];
+});
+  
+arrowBackButton.addEventListener('click', () => {
+  currentCategoryIndex--;
+  if (currentCategoryIndex < 0) {
+    currentCategoryIndex = categories.length - 1;
+  }
+  cardText.textContent = categories[currentCategoryIndex];
+});
+
 window.onload = () => {
   initMap();
 };
