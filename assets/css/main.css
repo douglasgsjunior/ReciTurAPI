@@ -160,10 +160,21 @@
     display: flex;
     justify-content: center; align-items: center;
 }
-.arrow-back, .arrow-next {
+.arrow-back {
     position: absolute;
     top: 0;
     left: 0;
+    cursor: pointer;
+    background-color: transparent;
+    width: 10%;
+    height: 100%;
+    border: none;
+    text-align: center;
+}
+.arrow-next {
+    position: absolute;
+    top: 0;
+    right: 0;
     cursor: pointer;
     background-color: transparent;
     width: 10%;
