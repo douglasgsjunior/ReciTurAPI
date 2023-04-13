@@ -139,6 +139,7 @@
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     justify-content: center; align-items: center;
+    border: none;
 }
 .card {
     display: flex;
