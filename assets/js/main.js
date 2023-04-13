@@ -45,7 +45,9 @@ function initMap() {
     zoomControl: false
   });
 
-  // Defina as informações dos pontos
+  const carousel = ['All', 'Category1', 'Category2', 'Category3'];
+  let currentCategoryIndex = 0;
+
   const points = [
     {
       name: "Meu novo ponto 1",
@@ -66,6 +68,48 @@ function initMap() {
       category: "Igreja"
     },
   ];
+
+  const cardText = document.querySelector('.card-text');
+  const arrowNextButton = document.querySelector('.arrow-next');
+  const arrowBackButton = document.querySelector('.arrow-back');
+  const categoryButtons = document.querySelectorAll('.category-button');
+
+  arrowNextButton.addEventListener('click', () => {
+    currentCategoryIndex++;
+    if (currentCategoryIndex >= carousel.length) {
+      currentCategoryIndex = 0;
+    }
+    cardText.textContent = carousel[currentCategoryIndex];
+    filterPoints();
+  });
+
+  arrowBackButton.addEventListener('click', () => {
+    currentCategoryIndex--;
+    if (currentCategoryIndex < 0) {
+      currentCategoryIndex = carousel.length - 1;
+    }
+    cardText.textContent = carousel[currentCategoryIndex];
+    filterPoints();
+  });
+
+  function filterPoints() {
+    const filteredPoints = currentCategoryIndex === 0 ? points : points.filter(point => point.category === carousel[currentCategoryIndex]);
+
+    // remove todos os marcadores existentes do mapa
+
+    // cria novos marcadores com base na lista filtrada de pontos
+
+  }
+
+  // adiciona evento de clique aos botões de categoria
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      currentCategoryIndex = carousel.findIndex(category => category === button.textContent);
+      cardText.textContent = carousel[currentCategoryIndex];
+      filterPoints();
+    });
+  });
+
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
