@@ -87,7 +87,7 @@ function initMap() {
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
       const category = button.dataset.category;
-      if (categories[currentCategoryIndex] === 'Tudo' || category === 'Tudo' || category === categories[currentCategoryIndex]) {
+      if (categories[currentCategoryIndex] === 'Tudo' || category === 'Tudo' || category === 'Igreja') {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';
@@ -108,7 +108,7 @@ function initMap() {
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
       const category = button.dataset.category;
-      if (categories[currentCategoryIndex] === 'Tudo' || category === 'Tudo' || category === categories[currentCategoryIndex]) {
+      if (categories[currentCategoryIndex] === 'Tudo' || category === 'Tudo' || category === 'Igreja') {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';
