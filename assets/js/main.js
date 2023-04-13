@@ -83,6 +83,10 @@ function initMap() {
     newButton.className = 'page2-point'
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
     newButton.addEventListener("click", () => {
+      // Verificar se o bottom-section está visível e, se sim, ocultá-lo
+      if (bottomSection.style.display === "block") {
+        bottomSection.style.display = "none";
+      }
       // Mostrar informações do ponto
       map.setCenter(point.position);
       map.setZoom(20); // Defina o nível de zoom adequado aqui
