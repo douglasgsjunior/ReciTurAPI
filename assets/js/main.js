@@ -76,6 +76,14 @@ function initMap() {
 
     const bottomSection = document.getElementById("bottom-section");
 
+    // Crie um novo botão para mostrar as informações do ponto
+    const newButton = document.createElement("button");
+    newButton.innerHTML = "Ver informações";
+    newButton.addEventListener("click", () => {
+      // Mostrar informações do ponto
+    });
+    infoPage.appendChild(newButton);
+
     newMarker.addListener("click", () => {
       if (bottomSection.innerHTML.trim() === "") {
         const markerInfo = document.createElement("div");
