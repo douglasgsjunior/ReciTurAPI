@@ -83,6 +83,10 @@ function initMap() {
     newButton.className = 'page2-point'
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
     newButton.addEventListener("click", () => {
+      // Verificar se o bottom-section está visível e, se sim, ocultá-lo
+      if (bottomSection.style.display === "block") {
+        bottomSection.style.display = "none";
+      }
       // Verificar se a página atual é a "page2"
       if (pages["page2"].style.display === "block") {
         // Esconde a página 2
@@ -115,7 +119,7 @@ function initMap() {
         } else {
           bottomSection.innerHTML = "";
 
-          bottomSection.style.display = "none";
+          bottomSection.style.display = "block";
         }
       }
     });
