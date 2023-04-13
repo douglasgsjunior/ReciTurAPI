@@ -80,6 +80,7 @@ function initMap() {
     // Crie um novo botão para mostrar as informações do ponto
     const newButton = document.createElement("button");
     newButton.innerHTML = point.name; // Alteração aqui
+    newButton.className = 'page2-points'
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
     newButton.addEventListener("click", () => {
       // Mostrar informações do ponto
