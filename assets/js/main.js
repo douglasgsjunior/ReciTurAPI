@@ -117,7 +117,14 @@ function initMap() {
 
           bottomSection.style.display = "block";
         } else {
+          const markerInfo = document.createElement("div");
+          markerInfo.innerHTML = `
+            <h2>${point.name}</h2>
+            <p>${point.info}</p>
+          `;
+
           bottomSection.innerHTML = "";
+          bottomSection.appendChild(markerInfo);
 
           bottomSection.style.display = "block";
         }
