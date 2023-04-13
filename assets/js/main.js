@@ -125,6 +125,7 @@ arrowBackButton.addEventListener('click', () => {
     });
   }
 });
+
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
     const newMarker = new google.maps.Marker({
