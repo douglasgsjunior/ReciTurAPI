@@ -61,7 +61,8 @@ function initMap() {
   const newPointInfo = "Esta é uma descrição do meu novo ponto.";
 
   // Encontre o elemento HTML que representa a seção inferior da tela
-  const bottomSection = document.getElementById("page2");
+  const bottomSection = document.getElementById("bottom-section");
+  const infoPage = document.getElementById("page2");
 
   // Adicione um evento de clique ao marcador
   newMarker.addListener("click", () => {
@@ -84,7 +85,7 @@ function initMap() {
       newButton.addEventListener("click", () => {
         // Mostrar informações do ponto
       });
-      bottomSection.appendChild(newButton);
+      infoPage.appendChild(newButton);
 
       // Exiba a seção inferior
       bottomSection.style.display = "block";
