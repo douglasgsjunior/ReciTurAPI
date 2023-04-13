@@ -89,12 +89,18 @@ function initMap() {
     
       // Verificar se a página atual é a "page2"
       if (pages["page2"].style.display === "block") {
-        const pointLat = point.position.lat;
-        const pointLng = point.position.lng;
-        const pointUrl = `page1.html?lat=${pointLat}&lng=${pointLng}`;
-        window.location.href = pointUrl;
+        // Esconde a página 2
+        pages["page2"].style.display = "none";
+        // Mostra a página 1
+        pages["page1"].style.display = "block";
+        // Adiciona a classe "active" ao botão correspondente na barra de navegação
+        document.getElementById("page1NavbarButton").classList.add("active");
+        // Remove a classe "active" dos outros botões na barra de navegação
+        document.querySelectorAll(".navbar-button-class:not(#page1NavbarButton)").forEach((button) => {
+          button.classList.remove("active");
+        });
       }
-    });
+    });    
     
     infoPage.appendChild(newButton);
 
