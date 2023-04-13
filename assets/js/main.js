@@ -72,7 +72,7 @@ function initMap() {
   const cardText = document.querySelector('.card-text');
   const arrowNextButton = document.querySelector('.arrow-next');
   const arrowBackButton = document.querySelector('.arrow-back');
-  const categoryButtons = document.querySelectorAll('.category-button');
+  const categoryButtons = document.querySelectorAll('.page2-point');
 
   arrowNextButton.addEventListener('click', () => {
     currentCategoryIndex++;
