@@ -84,9 +84,6 @@ function initMap() {
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
     newButton.addEventListener("click", () => {
       // Verificar se o bottom-section está visível e, se sim, ocultá-lo
-      if (bottomSection.style.display === "block") {
-        bottomSection.style.display = "none";
-      }
       if (bottomSection.innerHTML.trim() === "") {
         const markerInfo = document.createElement("div");
         markerInfo.innerHTML = `
