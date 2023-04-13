@@ -51,7 +51,7 @@ function initMap() {
       name: "Meu novo ponto 1",
       info: "Esta é uma descrição do meu novo ponto 1.",
       position: { lat: -8.056812, lng: -34.880047 },
-      category: "Tudo"
+      category: "Cinema"
     },
     {
       name: "Meu novo ponto 2",
@@ -80,56 +80,39 @@ function initMap() {
       currentCategoryIndex = 0;
     }
     cardText.textContent = categories[currentCategoryIndex];
-
+  
     // Seleciona os botões de categoria
     const categoryButtons = document.querySelectorAll('.page2-point');
-
+  
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
-      if (button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+      if (categories[currentCategoryIndex] === 'Tudo' || button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';
       }
     });
   });
-
+  
   arrowBackButton.addEventListener('click', () => {
     currentCategoryIndex--;
     if (currentCategoryIndex < 0) {
       currentCategoryIndex = categories.length - 1;
     }
     cardText.textContent = categories[currentCategoryIndex];
-
+  
     // Seleciona os botões de categoria
     const categoryButtons = document.querySelectorAll('.page2-point');
-
+  
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
-      if (button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+      if (categories[currentCategoryIndex] === 'Tudo' || button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';
       }
     });
-  });
-
-  arrowBackButton.addEventListener('click', () => {
-    currentCategoryIndex--;
-    if (currentCategoryIndex < 0) {
-      currentCategoryIndex = categories.length - 1;
-    }
-    cardText.textContent = categories[currentCategoryIndex];
-
-    // Define a visibilidade dos botões de categoria correspondentes
-    categoryButtons.forEach((button) => {
-      if (button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
-        button.style.display = 'block';
-      } else {
-        button.style.display = 'none';
-      }
-    });
-  });
+  });  
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
