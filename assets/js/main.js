@@ -66,42 +66,31 @@ function initMap() {
       category: "Igreja"
     },
   ];
-  
-  const carousel = ['Category1', 'Category2', 'Category3'];
-  let currentCategoryIndex = 0;
-  
-  const cardText = document.querySelector('.card-text');
-  const arrowNextButton = document.querySelector('.arrow-next');
-  const arrowBackButton = document.querySelector('.arrow-back');
-  
+
   arrowNextButton.addEventListener('click', () => {
     currentCategoryIndex++;
     if (currentCategoryIndex >= carousel.length) {
       currentCategoryIndex = 0;
     }
-    
-    // Verifica se a categoria atual do carrossel é "Category2"
-    if (carousel[currentCategoryIndex] === 'Category2') {
-      // Esconde o botão com a categoria "Parque"
-      points.forEach(point => {
-        if (point.category === 'Parque') {
-          const button = document.querySelector(`button[data-name="${point.name}"]`);
-          if (button) {
-            button.style.display = 'none';
-          }
+    cardText.textContent = carousel[currentCategoryIndex];
+  
+    if (carousel[currentCategoryIndex] === 'Category1') {
+      // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
+      const cinemaButtons = document.querySelectorAll('.page2-point');
+      cinemaButtons.forEach(button => {
+        if (button.getAttribute('category') === 'Cinema') {
+          button.style.display = 'flex';
+        } else {
+          button.style.display = 'none';
         }
       });
     } else {
-      // Mostra todos os botões novamente
-      points.forEach(point => {
-        const button = document.querySelector(`button[data-name="${point.name}"]`);
-        if (button) {
-          button.style.display = 'inline-block';
-        }
+      // exibir todos os botões da classe page2-point
+      const allButtons = document.querySelectorAll('.page2-point');
+      allButtons.forEach(button => {
+        button.style.display = 'flex';
       });
     }
-    
-    cardText.textContent = carousel[currentCategoryIndex];
   });
   
   arrowBackButton.addEventListener('click', () => {
@@ -109,29 +98,25 @@ function initMap() {
     if (currentCategoryIndex < 0) {
       currentCategoryIndex = carousel.length - 1;
     }
-    
-    // Verifica se a categoria atual do carrossel é "Category2"
-    if (carousel[currentCategoryIndex] === 'Category2') {
-      // Esconde o botão com a categoria "Parque"
-      points.forEach(point => {
-        if (point.category === 'Parque') {
-          const button = document.querySelector(`button[data-name="${point.name}"]`);
-          if (button) {
-            button.style.display = 'none';
-          }
+    cardText.textContent = carousel[currentCategoryIndex];
+  
+    if (carousel[currentCategoryIndex] === 'Category1') {
+      // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
+      const cinemaButtons = document.querySelectorAll('.page2-point');
+      cinemaButtons.forEach(button => {
+        if (button.getAttribute('category') === 'Cinema') {
+          button.style.display = 'flex';
+        } else {
+          button.style.display = 'none';
         }
       });
     } else {
-      // Mostra todos os botões novamente
-      points.forEach(point => {
-        const button = document.querySelector(`button[data-name="${point.name}"]`);
-        if (button) {
-          button.style.display = 'inline-block';
-        }
+      // exibir todos os botões da classe page2-point
+      const allButtons = document.querySelectorAll('.page2-point');
+      allButtons.forEach(button => {
+        button.style.display = 'flex';
       });
     }
-    
-    cardText.textContent = carousel[currentCategoryIndex];
   });  
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
@@ -151,6 +136,7 @@ function initMap() {
     const newButton = document.createElement("button");
     newButton.innerHTML = point.name; // Alteração aqui
     newButton.className = 'page2-point'
+    newButton.setAttribute('category', point.category); // adicionando o atributo "category"
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
     newButton.addEventListener("click", () => {
       // Verificar se o bottom-section está visível e, se sim, ocultá-lo
@@ -263,4 +249,3 @@ function initMap() {
 window.onload = () => {
   initMap();
 };
-  
