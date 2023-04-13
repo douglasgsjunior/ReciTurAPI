@@ -85,10 +85,7 @@ function initMap() {
     newButton.addEventListener("click", () => {
       // Mostrar informações do ponto
       map.setCenter(point.position);
-      map.setZoom(15); // Defina o nível de zoom adequado aqui
-
-      // Tornar o marcador correspondente visível
-      newMarker.setVisible(true);
+      map.setZoom(20); // Defina o nível de zoom adequado aqui
     
       // Verificar se a página atual é a "page2"
       if (pages["page2"].style.display === "block") {
