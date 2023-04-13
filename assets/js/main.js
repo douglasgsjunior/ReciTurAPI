@@ -82,6 +82,8 @@ function initMap() {
     newButton.innerHTML = point.name; // Alteração aqui
     newButton.addEventListener("click", () => {
       // Mostrar informações do ponto
+      map.setCenter(point.position);
+      map.setZoom(15); // Defina o nível de zoom adequado aqui
     });
     infoPage.appendChild(newButton);
 
