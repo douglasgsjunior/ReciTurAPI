@@ -81,12 +81,13 @@ function initMap() {
     }
     cardText.textContent = categories[currentCategoryIndex];
   
-    // Seleciona os botões de categoria
+    // Seleciona todos os botões de categoria
     const categoryButtons = document.querySelectorAll('.page2-point');
   
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
-      if (categories[currentCategoryIndex] === 'Tudo' || button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+      const category = button.dataset.category;
+      if (categories[currentCategoryIndex] === 'Tudo' || category === 'Tudo' || category === categories[currentCategoryIndex]) {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';
@@ -101,12 +102,13 @@ function initMap() {
     }
     cardText.textContent = categories[currentCategoryIndex];
   
-    // Seleciona os botões de categoria
+    // Seleciona todos os botões de categoria
     const categoryButtons = document.querySelectorAll('.page2-point');
   
     // Define a visibilidade dos botões de categoria correspondentes
     categoryButtons.forEach((button) => {
-      if (categories[currentCategoryIndex] === 'Tudo' || button.dataset.category === 'Tudo' || button.dataset.category === categories[currentCategoryIndex]) {
+      const category = button.dataset.category;
+      if (categories[currentCategoryIndex] === 'Tudo' || category === 'Tudo' || category === categories[currentCategoryIndex]) {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';
