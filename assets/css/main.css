@@ -211,9 +211,8 @@
 }
 .dot-circle-class {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    cursor: pointer;
     background-color: transparent;
     width: 10%;
     height: 100%;
@@ -232,7 +231,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    cursor: pointer;
     background-color: transparent;
     width: 10%;
     height: 100%;
