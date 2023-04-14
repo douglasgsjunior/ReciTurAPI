@@ -91,13 +91,35 @@ function initMap() {
         button.style.display = 'none';
       }
     });
+  
+    // ocultar todos os botões que não correspondem à categoria "Cinema"
+    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Cinema"])');
+    nonCinemaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Category2') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Igreja') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Igreja"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
   } else {
     // exibir todos os botões da classe page2-point
     const allButtons = document.querySelectorAll('.page2-point');
     allButtons.forEach(button => {
       button.style.display = 'flex';
     });
-  }
+  }  
 });
 
 arrowBackButton.addEventListener('click', () => {
@@ -117,6 +139,28 @@ arrowBackButton.addEventListener('click', () => {
         button.style.display = 'none';
       }
     });
+  
+    // ocultar todos os botões que não correspondem à categoria "Cinema"
+    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Cinema"])');
+    nonCinemaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Category2') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Igreja') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Igreja"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
   } else {
     // exibir todos os botões da classe page2-point
     const allButtons = document.querySelectorAll('.page2-point');
@@ -124,6 +168,7 @@ arrowBackButton.addEventListener('click', () => {
       button.style.display = 'flex';
     });
   }
+  
 });
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
