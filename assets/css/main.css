@@ -206,25 +206,29 @@
     color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center; align-items: center;
-    width: 100vw; height: 10vh;
+    width: 100vw; height: 6vh;
 }
 .dot-circle-class {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
 }
-.point-name-class {
-    display: flex;
-    flex-direction: column;
-}
+.fa-dot-circle {
+    text-align: left;
+} 
+.point-name-class,
 .point-subname-class {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
 }
 .list-line {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    margin-top: 5px;
+    text-align: center;
 }
 .map-marker-alt-class {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
 }
