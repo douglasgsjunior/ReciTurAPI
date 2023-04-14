@@ -216,7 +216,7 @@
 .button-guide {
     display: flex;
     flex-direction: column;
-    width: 97vw;
+    width: 90vw;
     height: 8vh;
     background-color: rgb(41, 193, 28);
     cursor: pointer;
@@ -245,4 +245,5 @@
     height: 50%;
     background-color: transparent;
     text-align: center;
+    padding: 10px;
 }
