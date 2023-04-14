@@ -208,23 +208,23 @@
     width: 100vw; height: 6vh;
 }
 .dot-circle-class {
-    display: flex;
-    align-items: center;
-    position: relative;
-    left: 0;
+
 }
-.point-name-class,
+.point-name-class {
+    display: flex;
+    flex-direction: column;
+    width: 80%; height: 49%;
+}
 .point-subname-class {
     display: flex;
-    justify-content: center; align-items: center;
+    flex-direction: column;
+    width: 80%; height: 49%;
 }
 .list-line {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%; height: 1px;
 }
 .map-marker-alt-class {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: right;
+
 }
