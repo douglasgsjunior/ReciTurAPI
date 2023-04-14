@@ -205,7 +205,6 @@
 .page2-point {
     display: flex;
     flex-direction: row;
-    left: 0; top: 0;
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     justify-content: center; align-items: center;
