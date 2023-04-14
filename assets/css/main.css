@@ -218,7 +218,6 @@
     flex-direction: column;
     width: 97vw; height: 8vh;
     background-color: rgb(41, 193, 28);
-    vertical-align: bottom;
     cursor: pointer;
     border-radius: 5px;
     margin: 1.5%;
