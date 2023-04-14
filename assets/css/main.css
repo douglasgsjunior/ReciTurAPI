@@ -250,9 +250,9 @@
 .text-class {
     display: flex;
     left: 0; top: 0;
-    width: 100vw; height: 6vh;
+    width: 100vw; height: 4vh;
     background-color: rgb(255, 255, 255);
     justify-content: center; align-items: center; 
-    color: rgb(180, 180, 180);
+    color: rgb(134, 134, 134);
     font-weight: bold;
 }
