@@ -154,12 +154,6 @@ function initMap() {
         button.style.display = 'none';
       }
     });
-  
-    // ocultar todos os botões que não correspondem à categoria "Cinema"
-    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Tudo"])');
-    nonCinemaButtons.forEach(button => {
-      button.style.display = 'none';
-    });
   } else if (carousel[currentCategoryIndex] === 'Arte & Arquitetura') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
     const igrejaButtons = document.querySelectorAll('.page2-point');
@@ -354,12 +348,6 @@ arrowBackButton.addEventListener('click', () => {
       } else {
         button.style.display = 'none';
       }
-    });
-  
-    // ocultar todos os botões que não correspondem à categoria "Cinema"
-    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Tudo"])');
-    nonCinemaButtons.forEach(button => {
-      button.style.display = 'none';
     });
   } else if (carousel[currentCategoryIndex] === 'Arte & Arquitetura') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
