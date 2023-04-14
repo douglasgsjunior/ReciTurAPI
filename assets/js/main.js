@@ -550,14 +550,14 @@ arrowBackButton.addEventListener('click', () => {
     const newButton = document.createElement("button");
     newButton.innerHTML = `
       <div class="">
-        <i class="fas fa-home"></i>
+        <i class="fas fa-dot-circle"></i>
       </div>
       <div class="">
         ${point.name}
       </div>
       <div class="list-line"><div>
       <div class="">
-        <a href="#" class="fas fa-map-marker-alt"></a>
+        <i class="fas fa-map-marker-alt"></i>
       </div>
     `;
     newButton.className = 'page2-point'
