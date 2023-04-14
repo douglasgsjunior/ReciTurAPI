@@ -209,13 +209,10 @@
     width: 100vw; height: 6vh;
 }
 .dot-circle-class {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-}
-.fa-dot-circle {
+    display: flex;
+    align-items: center;
     text-align: left;
-} 
+}
 .point-name-class,
 .point-subname-class {
     display: inline-block;
