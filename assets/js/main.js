@@ -46,39 +46,18 @@ function initMap() {
   });
 
   var input = document.getElementById('search');
-  var autocomplete = new google.maps.places.Autocomplete(input, { types: ['establishment'] });
-
-  var placeRestrictions = [];
-
-  // Crie uma matriz de IDs de lugares a serem restringidos
-  for (var i = 0; i < points.length; i++) {
-    var point = points[i];
-    var placeId = 'place_id:' + google.maps.places.PlacesServiceStatus.OK + '::' + point.name;
-    placeRestrictions.push(placeId);
-  }
-
-  autocomplete.setFields(['place_id', 'name']); // somente os campos necessários
-  autocomplete.setOptions({ strictBounds: true, placeRestrictions: placeRestrictions }); // restringir a pesquisa aos lugares criados por você
+  var autocomplete = new google.maps.places.Autocomplete(input);
 
   autocomplete.addListener('place_changed', function() {
     var place = autocomplete.getPlace();
-
     if (place.geometry) {
-      // Verificar se o lugar está na lista de pontos criados por você
-      var point = points.find(function(point) {
-        return point.name === place.name && point.position.lat === place.geometry.location.lat() && point.position.lng === place.geometry.location.lng();
-      });
-
-      if (point) {
-        // O usuário selecionou um lugar válido que corresponde aos marcadores que você criou. 
-        // Você pode obter informações adicionais sobre o lugar usando os métodos do objeto Place.
-      } else {
-        // O usuário selecionou um lugar que não corresponde aos marcadores que você criou.
-      }
+      // O usuário selecionou um lugar válido. Você pode obter informações adicionais sobre o lugar
+      // usando os métodos do objeto Place. Por exemplo, place.geometry.location contém as coordenadas
+      // do lugar.
     } else {
       // O usuário não selecionou um lugar válido.
     }
-  });
+  });  
 
   // Defina as informações dos pontos
   const points = [
