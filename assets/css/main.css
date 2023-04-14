@@ -222,6 +222,7 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 1.5%;
+    text-align: center;
 }
 .guide {
     display: flex;
