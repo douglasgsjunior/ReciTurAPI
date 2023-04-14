@@ -211,7 +211,8 @@
 .dot-circle-class {
     display: flex;
     align-items: center;
-    text-align: left;
+    position: relative;
+    left: 0;
 }
 .point-name-class,
 .point-subname-class {
