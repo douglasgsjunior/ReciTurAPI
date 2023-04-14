@@ -208,7 +208,7 @@
     width: 100vw; height: 6vh;
 }
 .dot-circle-class {
-
+    display: flex;
 }
 .point-name-class,
 .point-subname-class {
@@ -216,8 +216,8 @@
   flex-direction: column;
 }
 .list-line {
-
+    display: flex;
 }
 .map-marker-alt-class {
-
+    display: flex;
 }
