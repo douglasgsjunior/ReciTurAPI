@@ -205,14 +205,11 @@
 .page2-point {
     display: flex;
     flex-direction: column;
-    left: 0; top: 0;
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     align-items: center;
 }
 .dot-circle-class {
-    display: flex;
-    flex-direction: row;
     width: 10%;
     height: 100%;
 }
