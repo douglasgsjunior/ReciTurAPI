@@ -559,9 +559,6 @@ arrowBackButton.addEventListener('click', () => {
         ${point.name}
       </div>
       <div class="list-line"><div>
-      <div class="map-marker-alt-class">
-        <i class="fas fa-map-marker-alt"></i>
-      </div>
     `;
     newButton.className = 'page2-point'
     newButton.setAttribute('category', point.category); // adicionando o atributo "category"
