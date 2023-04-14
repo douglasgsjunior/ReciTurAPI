@@ -208,16 +208,13 @@
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     align-items: center;
+    border: none;
 }
 .dot-circle-class {
-    position: relative;
-    top: 0;
-    left: 0;
-    background-color: transparent;
     width: 10%;
     height: 100%;
-    border: none;
     text-align: center;
+    justify-content: center;
 }
 .point-name-class,
 .point-subname-class {
