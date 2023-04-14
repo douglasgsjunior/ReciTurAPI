@@ -204,20 +204,10 @@
 }
 .page2-point {
     display: flex;
-    flex-direction: column;
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
-    align-items: center;
-}
-.dot-circle-class {
-    display: flex;
-}
-.point-name-class,
-.point-subname-class {
-  display: flex;
-}
-.list-line {
-    display: flex;
-    background-color: rgb(127, 127, 127);
-    width: 90%; height: 1px; 
+    justify-content: center; align-items: center;
+    border: none;
+    text-align: center;
+    cursor: pointer;
 }
