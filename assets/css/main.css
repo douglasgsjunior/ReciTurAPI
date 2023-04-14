@@ -207,5 +207,24 @@
     display: flex;
     justify-content: center; align-items: center;
     width: 100vw; height: 6vh;
+}
+.dot-circle-class {
+    display: flex;
+    flex-direction: row;
+}
+.point-name-class {
+    display: flex;
+    flex-direction: column;
+}
+.point-subname-class {
+    display: flex;
+    flex-direction: column;
+}
+.list-line {
+    display: flex;
+    flex-direction: column;
+}
+.map-marker-alt-class {
+    display: flex;
     flex-direction: row;
 }
