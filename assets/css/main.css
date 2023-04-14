@@ -70,6 +70,17 @@
     display: flex;
     margin: 1.5%;
 }
+.search-bar-class-2 {
+    color: rgba(0, 0, 0, 1); background-color: rgba(247, 247, 247, 1);
+    border: none;
+    width: 90%; height: 70%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center; align-items: center;
+    flex-direction: row;
+    display: flex;
+    margin: 1.5%;
+}
 .search-bar-class input[type="text"] {
     background-color: transparent; /* Cor de fundo */
     border: none;
