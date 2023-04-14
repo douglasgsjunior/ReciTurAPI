@@ -212,3 +212,22 @@
     border-radius: 5px;
     margin: 1.5%;
 }
+.button-guide {
+    display: flex;
+    width: 97vw; height: 8vh;
+    background-color: rgb(41, 193, 28);
+    justify-content: center; align-items: center;
+    vertical-align: bottom;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 1.5%;
+}
+.guide {
+    display: flex;
+    width: 100%; height: 4vh;
+    background-color: rgb(41, 193, 28);
+    justify-content: center; align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
