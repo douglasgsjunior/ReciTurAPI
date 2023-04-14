@@ -216,25 +216,33 @@
 .button-guide {
     display: flex;
     flex-direction: column;
-    width: 97vw; height: 8vh;
+    width: 97vw;
+    height: 8vh;
     background-color: rgb(41, 193, 28);
     cursor: pointer;
     border-radius: 5px;
     margin: 1.5%;
     text-align: center;
-}
-.guide {
+  }
+  
+  .guide {
     display: flex;
-    width: 97vw; height: 4vh;
+    justify-content: center; /* add this property */
+    width: 97vw;
+    height: 4vh;
     background-color: rgb(55, 55, 55);
     border-radius: 5px;
     color: rgb(255, 255, 255);
     font-weight: bold;
     text-align: center;
-}
-.whatsapp {
+  }
+  
+  .whatsapp {
     display: flex;
-    width: 97vw; height: 4vh;
+    justify-content: center; /* add this property */
+    width: 97vw;
+    height: 4vh;
     background-color: transparent;
     text-align: center;
-}
+  }
+  
