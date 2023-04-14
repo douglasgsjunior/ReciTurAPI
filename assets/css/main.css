@@ -223,9 +223,9 @@
     border-radius: 5px;
     margin: 1.5%;
     text-align: center;
-  }
+}
   
-  .guide {
+.guide {
     display: flex;
     justify-content: center; /* add this property */
     width: 97vw;
@@ -235,16 +235,15 @@
     color: rgb(255, 255, 255);
     font-weight: bold;
     text-align: center;
-    padding: 25%;
-  }
+    padding: 5px;
+}
   
-  .whatsapp {
+.whatsapp {
     display: flex;
     justify-content: center; /* add this property */
     width: 97vw;
     height: 4vh;
     background-color: transparent;
     text-align: center;
-    padding: 25%;
-  }
-  
+    padding: 5px;
+}
