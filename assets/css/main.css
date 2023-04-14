@@ -211,9 +211,5 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 1.5%;
-    transform: translateY(100%);
-    animation-name: slide-up;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
+    opacity: 0; animation: fade-in 1s forwards;
 }
