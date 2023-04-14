@@ -235,7 +235,7 @@
     color: rgb(255, 255, 255);
     font-weight: bold;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
   
 .whatsapp {
@@ -245,5 +245,5 @@
     height: 4vh;
     background-color: transparent;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
