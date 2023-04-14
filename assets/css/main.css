@@ -205,25 +205,18 @@
 .page2-point {
     color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
     display: flex;
-    width: 100vw; height: 10vh;
+    width: 100vw; height: 6vh;
 }
 .dot-circle-class {
 
 }
-.point-name-class {
-    display: flex;
-    flex-direction: column;
-    width: 80%; height: 49%;
-}
+.point-name-class,
 .point-subname-class {
-    display: flex;
-    flex-direction: column;
-    width: 80%; height: 49%;
+  display: flex;
+  flex-direction: column;
 }
 .list-line {
-    display: flex;
-    flex-direction: column;
-    width: 80%; height: 1px;
+
 }
 .map-marker-alt-class {
 
