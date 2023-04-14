@@ -93,7 +93,7 @@ function initMap() {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Cinema"
-    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Cinema"])');
+    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Parque"])');
     nonCinemaButtons.forEach(button => {
       button.style.display = 'none';
     });
@@ -173,7 +173,7 @@ arrowBackButton.addEventListener('click', () => {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Igreja"
-    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Igreja"])');
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Parque"])');
     nonIgrejaButtons.forEach(button => {
       button.style.display = 'none';
     });
