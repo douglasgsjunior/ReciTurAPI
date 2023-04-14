@@ -69,57 +69,62 @@ function initMap() {
 
   const carousel = ['Category1', 'Category2', 'Category3'];
   let currentCategoryIndex = 0;
-
+  
   const cardText = document.querySelector('.card-text');
   const arrowNextButton = document.querySelector('.arrow-next');
   const arrowBackButton = document.querySelector('.arrow-back');
+  
+  arrowNextButton.addEventListener('click', () => {
+  currentCategoryIndex++;
+  if (currentCategoryIndex >= carousel.length) {
+    currentCategoryIndex = 0;
+  }
+  cardText.textContent = carousel[currentCategoryIndex];
 
-  function handleArrowClick(event) {
-    if (event.target === arrowNextButton) {
-      currentCategoryIndex++;
-      if (currentCategoryIndex >= carousel.length) {
-        currentCategoryIndex = 0;
-      }
-    } else if (event.target === arrowBackButton) {
-      currentCategoryIndex--;
-      if (currentCategoryIndex < 0) {
-        currentCategoryIndex = carousel.length - 1;
-      }
-    }
-  
-    cardText.textContent = carousel[currentCategoryIndex];
-  
-    if (carousel[currentCategoryIndex] === 'Category1') {
-      // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
-      const cinemaButtons = document.querySelectorAll('.page2-point');
-      cinemaButtons.forEach(button => {
-        if (button.getAttribute('category') === 'Cinema') {
-          button.style.display = 'flex';
-        } else {
-          button.style.display = 'none';
-        }
-      });
-    } else if (carousel[currentCategoryIndex] === 'Category2') {
-      // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
-      const igrejaButtons = document.querySelectorAll('.page2-point');
-      igrejaButtons.forEach(button => {
-        if (button.getAttribute('category') === 'Igreja') {
-          button.style.display = 'flex';
-        } else {
-          button.style.display = 'none';
-        }
-      });
-    } else {
-      // exibir todos os botões da classe page2-point
-      const allButtons = document.querySelectorAll('.page2-point');
-      allButtons.forEach(button => {
+  if (carousel[currentCategoryIndex] === 'Category1') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
+    const cinemaButtons = document.querySelectorAll('.page2-point');
+    cinemaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Cinema') {
         button.style.display = 'flex';
-      });
-    }
-  }  
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  } else {
+    // exibir todos os botões da classe page2-point
+    const allButtons = document.querySelectorAll('.page2-point');
+    allButtons.forEach(button => {
+      button.style.display = 'flex';
+    });
+  }
+});
 
-  arrowNextButton.addEventListener('click', handleArrowClick);
-  arrowBackButton.addEventListener('click', handleArrowClick);
+arrowBackButton.addEventListener('click', () => {
+  currentCategoryIndex--;
+  if (currentCategoryIndex < 0) {
+    currentCategoryIndex = carousel.length - 1;
+  }
+  cardText.textContent = carousel[currentCategoryIndex];
+
+  if (carousel[currentCategoryIndex] === 'Category1') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
+    const cinemaButtons = document.querySelectorAll('.page2-point');
+    cinemaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Cinema') {
+        button.style.display = 'flex';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  } else {
+    // exibir todos os botões da classe page2-point
+    const allButtons = document.querySelectorAll('.page2-point');
+    allButtons.forEach(button => {
+      button.style.display = 'flex';
+    });
+  }
+});
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
