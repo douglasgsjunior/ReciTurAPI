@@ -550,7 +550,7 @@ arrowBackButton.addEventListener('click', () => {
     const newButton = document.createElement("button");
     newButton.innerHTML = `
       <div class="">
-        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-home"></i>
       </div>
       <div class="">
         ${point.name}
