@@ -278,3 +278,36 @@
     justify-content: center; align-items: center;
     font-weight: bold;
 }
+.google {
+    display: flex;
+    flex-direction: column;
+    width: 97vw; height: 6vh;
+    background-color: rgb(239, 239, 239);
+    justify-content: center; align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 1.5%;
+}
+.gov {
+    display: flex;
+    flex-direction: column;
+    width: 97vw; height: 6vh;
+    background-color: rgb(239, 239, 239);
+    justify-content: center; align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 1.5%;
+}
+.user-button {
+    display: flex;
+    flex-direction: column;
+    width: 97vw; height: 6vh;
+    background-color: rgb(239, 239, 239);
+    justify-content: center; align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 1.5%;
+}
