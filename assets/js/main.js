@@ -86,9 +86,9 @@ function initMap() {
         currentCategoryIndex = carousel.length - 1;
       }
     }
-
+  
     cardText.textContent = carousel[currentCategoryIndex];
-
+  
     if (carousel[currentCategoryIndex] === 'Category1') {
       // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
       const cinemaButtons = document.querySelectorAll('.page2-point');
@@ -99,18 +99,11 @@ function initMap() {
           button.style.display = 'none';
         }
       });
-    } else {
-      // exibir todos os botões da classe page2-point
-      const allButtons = document.querySelectorAll('.page2-point');
-      allButtons.forEach(button => {
-        button.style.display = 'flex';
-      });
-    }
-    if (carousel[currentCategoryIndex] === 'Category2') {
-      // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
-      const cinemaButtons = document.querySelectorAll('.page2-point');
-      cinemaButtons.forEach(button => {
-        if (button.getAttribute('category') === 'Cinema') {
+    } else if (carousel[currentCategoryIndex] === 'Category2') {
+      // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+      const igrejaButtons = document.querySelectorAll('.page2-point');
+      igrejaButtons.forEach(button => {
+        if (button.getAttribute('category') === 'Igreja') {
           button.style.display = 'flex';
         } else {
           button.style.display = 'none';
@@ -123,7 +116,7 @@ function initMap() {
         button.style.display = 'flex';
       });
     }
-  }
+  }  
 
   arrowNextButton.addEventListener('click', handleArrowClick);
   arrowBackButton.addEventListener('click', handleArrowClick);
