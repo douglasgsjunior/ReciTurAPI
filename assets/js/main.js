@@ -45,6 +45,20 @@ function initMap() {
     zoomControl: false
   });
 
+  var input = document.getElementById('search');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+
+  autocomplete.addListener('place_changed', function() {
+    var place = autocomplete.getPlace();
+    if (place.geometry) {
+      // O usuário selecionou um lugar válido. Você pode obter informações adicionais sobre o lugar
+      // usando os métodos do objeto Place. Por exemplo, place.geometry.location contém as coordenadas
+      // do lugar.
+    } else {
+      // O usuário não selecionou um lugar válido.
+    }
+  });  
+
   // Defina as informações dos pontos
   const points = [
     {
