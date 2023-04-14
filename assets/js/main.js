@@ -139,7 +139,16 @@ function initMap() {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
     const cinemaButtons = document.querySelectorAll('.page2-point');
     cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Arte & Arquitetura', 'Centros de Compras', 'Eventos Culturais & Festivais', 'Fortes', 'História & Cultura', 'Mercados & Feiras', 'Parques & Áreas Verdes', 'Pontes & Canais', 'Praias', 'Turismo Religioso') {
+      if (button.getAttribute('category') === 'Arte & Arquitetura' || 
+          button.getAttribute('category') === 'Centros de Compras' ||
+          button.getAttribute('category') === 'Eventos Culturais & Festivais' ||
+          button.getAttribute('category') === 'Fortes' ||
+          button.getAttribute('category') === 'História & Cultura' ||
+          button.getAttribute('category') === 'Mercados & Feiras' ||
+          button.getAttribute('category') === 'Parques & Áreas Verdes' ||
+          button.getAttribute('category') === 'Pontes & Canais' ||
+          button.getAttribute('category') === 'Praias' ||
+          button.getAttribute('category') === 'Turismo Religioso') {
         button.style.display = 'flex';
       } else {
         button.style.display = 'none';
@@ -331,7 +340,16 @@ arrowBackButton.addEventListener('click', () => {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
     const cinemaButtons = document.querySelectorAll('.page2-point');
     cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Arte & Arquitetura', 'Centros de Compras', 'Eventos Culturais & Festivais', 'Fortes', 'História & Cultura', 'Mercados & Feiras', 'Parques & Áreas Verdes', 'Pontes & Canais', 'Praias', 'Turismo Religioso') {
+      if (button.getAttribute('category') === 'Arte & Arquitetura' || 
+          button.getAttribute('category') === 'Centros de Compras' ||
+          button.getAttribute('category') === 'Eventos Culturais & Festivais' ||
+          button.getAttribute('category') === 'Fortes' ||
+          button.getAttribute('category') === 'História & Cultura' ||
+          button.getAttribute('category') === 'Mercados & Feiras' ||
+          button.getAttribute('category') === 'Parques & Áreas Verdes' ||
+          button.getAttribute('category') === 'Pontes & Canais' ||
+          button.getAttribute('category') === 'Praias' ||
+          button.getAttribute('category') === 'Turismo Religioso') {
         button.style.display = 'flex';
       } else {
         button.style.display = 'none';
