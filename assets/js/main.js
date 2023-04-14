@@ -51,23 +51,77 @@ function initMap() {
       name: "Meu novo ponto 1",
       info: "Esta é uma descrição do meu novo ponto 1.",
       position: { lat: -8.056812, lng: -34.880047 },
-      category: "Cinema"
+      category: "Arte & Arquitetura"
     },
     {
       name: "Meu novo ponto 2",
       info: "Esta é uma descrição do meu novo ponto 2.",
       position: { lat: -8.060012, lng: -34.881347 },
-      category: "Parque"
+      category: "Centros de Compras"
     },
     {
       name: "Meu novo ponto 3",
       info: "Esta é uma descrição do meu novo ponto 3.",
-      position: { lat: -8.055112, lng: -34.883047 },
-      category: "Igreja"
+      position: { lat: -8.075112, lng: -34.893047 },
+      category: "Eventos Culturais & Festivais"
+    },
+    {
+      name: "Meu novo ponto 4",
+      info: "Esta é uma descrição do meu novo ponto 4.",
+      position: { lat: -8.081812, lng: -34.810047 },
+      category: "Fortes"
+    },
+    {
+      name: "Meu novo ponto 5",
+      info: "Esta é uma descrição do meu novo ponto 5.",
+      position: { lat: -8.079812, lng: -34.900047 },
+      category: "História & Cultura"
+    },
+    {
+      name: "Meu novo ponto 6",
+      info: "Esta é uma descrição do meu novo ponto 6.",
+      position: { lat: -8.085812, lng: -34.780047 },
+      category: "Mercados & Feiras"
+    },
+    {
+      name: "Meu novo ponto 7",
+      info: "Esta é uma descrição do meu novo ponto 7.",
+      position: { lat: -8.056812, lng: -34.880047 },
+      category: "Parques & Áreas Verdes"
+    },
+    {
+      name: "Meu novo ponto 8",
+      info: "Esta é uma descrição do meu novo ponto 8.",
+      position: { lat: -8.056812, lng: -34.880047 },
+      category: "Pontes & Canais"
+    },
+    {
+      name: "Meu novo ponto 9",
+      info: "Esta é uma descrição do meu novo ponto 9.",
+      position: { lat: -8.056812, lng: -34.880047 },
+      category: "Praias"
+    },
+    {
+      name: "Meu novo ponto 10",
+      info: "Esta é uma descrição do meu novo ponto 10.",
+      position: { lat: -8.056812, lng: -34.880047 },
+      category: "Turismo Religioso"
     },
   ];
 
-  const carousel = ['Category1', 'Category2', 'Category3'];
+  const carousel = [
+    'Tudo', 
+    'Arte & Arquitetura', 
+    'Centros de Compras', 
+    'Eventos Culturais & Festivais', 
+    'Fortes', 
+    'História & Cultura', 
+    'Mercados & Feiras', 
+    'Parques & Áreas Verdes', 
+    'Pontes & Canais', 
+    'Praias', 
+    'Turismo Religioso'
+  ];
   let currentCategoryIndex = 0;
   
   const cardText = document.querySelector('.card-text');
@@ -81,11 +135,11 @@ function initMap() {
   }
   cardText.textContent = carousel[currentCategoryIndex];
 
-  if (carousel[currentCategoryIndex] === 'Category1') {
+  if (carousel[currentCategoryIndex] === 'Tudo') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
     const cinemaButtons = document.querySelectorAll('.page2-point');
     cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Cinema') {
+      if (button.getAttribute('category') === 'Tudo') {
         button.style.display = 'flex';
       } else {
         button.style.display = 'none';
@@ -93,15 +147,15 @@ function initMap() {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Cinema"
-    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Cinema"])');
+    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Tudo"])');
     nonCinemaButtons.forEach(button => {
       button.style.display = 'none';
     });
-  } else if (carousel[currentCategoryIndex] === 'Category2') {
+  } else if (carousel[currentCategoryIndex] === 'Arte & Arquitetura') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
     const igrejaButtons = document.querySelectorAll('.page2-point');
     igrejaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Parque') {
+      if (button.getAttribute('category') === 'Arte & Arquitetura') {
           button.style.display = 'flex';
       } else {
           button.style.display = 'none';
@@ -109,15 +163,15 @@ function initMap() {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Igreja"
-    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Parque"])');
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Arte & Arquitetura"])');
     nonIgrejaButtons.forEach(button => {
       button.style.display = 'none';
     });
-  } else if (carousel[currentCategoryIndex] === 'Category3') {
+  } else if (carousel[currentCategoryIndex] === 'Centros de Compras') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
     const igrejaButtons = document.querySelectorAll('.page2-point');
     igrejaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Igreja') {
+      if (button.getAttribute('category') === 'Centros de Compras') {
           button.style.display = 'flex';
       } else {
           button.style.display = 'none';
@@ -125,7 +179,135 @@ function initMap() {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Igreja"
-    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Igreja"])');
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Centros de Compras"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Eventos Culturais & Festivais') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Eventos Culturais & Festivais') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Eventos Culturais & Festivais"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Fortes') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Fortes') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Fortes"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'História & Cultura') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'História & Cultura') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="História & Cultura"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Mercados & Feiras') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Mercados & Feiras') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Mercados & Feiras"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Parques & Áreas Verdes') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Parques & Áreas Verdes') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Parques & Áreas Verdes"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Pontes & Canais') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Pontes & Canais') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Pontes & Canais"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Praias') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Praias') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Praias"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Turismo Religioso') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Turismo Religioso') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Turismo Religioso"])');
     nonIgrejaButtons.forEach(button => {
       button.style.display = 'none';
     });
@@ -145,11 +327,11 @@ arrowBackButton.addEventListener('click', () => {
   }
   cardText.textContent = carousel[currentCategoryIndex];
 
-  if (carousel[currentCategoryIndex] === 'Category1') {
+  if (carousel[currentCategoryIndex] === 'Tudo') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
     const cinemaButtons = document.querySelectorAll('.page2-point');
     cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Cinema') {
+      if (button.getAttribute('category') === 'Tudo') {
         button.style.display = 'flex';
       } else {
         button.style.display = 'none';
@@ -157,15 +339,15 @@ arrowBackButton.addEventListener('click', () => {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Cinema"
-    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Cinema"])');
+    const nonCinemaButtons = document.querySelectorAll('.page2-point:not([category="Tudo"])');
     nonCinemaButtons.forEach(button => {
       button.style.display = 'none';
     });
-  } else if (carousel[currentCategoryIndex] === 'Category2') {
+  } else if (carousel[currentCategoryIndex] === 'Arte & Arquitetura') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
     const igrejaButtons = document.querySelectorAll('.page2-point');
     igrejaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Parque') {
+      if (button.getAttribute('category') === 'Arte & Arquitetura') {
           button.style.display = 'flex';
       } else {
           button.style.display = 'none';
@@ -173,15 +355,15 @@ arrowBackButton.addEventListener('click', () => {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Igreja"
-    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Parque"])');
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Arte & Arquitetura"])');
     nonIgrejaButtons.forEach(button => {
       button.style.display = 'none';
     });
-  } else if (carousel[currentCategoryIndex] === 'Category3') {
+  } else if (carousel[currentCategoryIndex] === 'Centros de Compras') {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
     const igrejaButtons = document.querySelectorAll('.page2-point');
     igrejaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Igreja') {
+      if (button.getAttribute('category') === 'Centros de Compras') {
           button.style.display = 'flex';
       } else {
           button.style.display = 'none';
@@ -189,7 +371,135 @@ arrowBackButton.addEventListener('click', () => {
     });
   
     // ocultar todos os botões que não correspondem à categoria "Igreja"
-    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Igreja"])');
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Centros de Compras"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Eventos Culturais & Festivais') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Eventos Culturais & Festivais') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Eventos Culturais & Festivais"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Fortes') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Fortes') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Fortes"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'História & Cultura') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'História & Cultura') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="História & Cultura"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Mercados & Feiras') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Mercados & Feiras') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Mercados & Feiras"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Parques & Áreas Verdes') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Parques & Áreas Verdes') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Parques & Áreas Verdes"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Pontes & Canais') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Pontes & Canais') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Pontes & Canais"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Praias') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Praias') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Praias"])');
+    nonIgrejaButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+  } else if (carousel[currentCategoryIndex] === 'Turismo Religioso') {
+    // exibir apenas os botões da classe page2-point que possuem a categoria "Igreja"
+    const igrejaButtons = document.querySelectorAll('.page2-point');
+    igrejaButtons.forEach(button => {
+      if (button.getAttribute('category') === 'Turismo Religioso') {
+          button.style.display = 'flex';
+      } else {
+          button.style.display = 'none';
+      }
+    });
+  
+    // ocultar todos os botões que não correspondem à categoria "Igreja"
+    const nonIgrejaButtons = document.querySelectorAll('.page2-point:not([category="Turismo Religioso"])');
     nonIgrejaButtons.forEach(button => {
       button.style.display = 'none';
     });
