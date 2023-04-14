@@ -550,10 +550,14 @@ arrowBackButton.addEventListener('click', () => {
     const newButton = document.createElement("button");
     newButton.innerHTML = `
       <div>
-        <a href="#" class="fa fa-link"></a>
-        <a href="#" class="fa fa-download"></a>
+        <i class="fas fa-arrow-left" ></i>
       </div>
-      ${point.name}
+      <div>
+        ${point.name}
+      </div>
+      <div>
+      <i class="fas fa-arrow-left" ></i>
+      </div>
     `;
     newButton.className = 'page2-point'
     newButton.setAttribute('category', point.category); // adicionando o atributo "category"
