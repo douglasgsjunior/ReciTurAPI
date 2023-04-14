@@ -215,9 +215,8 @@
 }
 .point-name-class,
 .point-subname-class {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
+    display: flex;
+    justify-content: center; align-items: center;
 }
 .list-line {
     display: block;
