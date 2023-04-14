@@ -205,7 +205,6 @@
 .page2-point {
     color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
     display: flex;
-    justify-content: center; align-items: center;
     width: 100vw; height: 6vh;
 }
 .dot-circle-class {
