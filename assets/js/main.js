@@ -139,7 +139,7 @@ function initMap() {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
     const cinemaButtons = document.querySelectorAll('.page2-point');
     cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Tudo') {
+      if (button.getAttribute('category') === 'Arte & Arquitetura', 'Centros de Compras', 'Eventos Culturais & Festivais', 'Fortes', 'História & Cultura', 'Mercados & Feiras', 'Parques & Áreas Verdes', 'Pontes & Canais', 'Praias', 'Turismo Religioso') {
         button.style.display = 'flex';
       } else {
         button.style.display = 'none';
@@ -331,7 +331,7 @@ arrowBackButton.addEventListener('click', () => {
     // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
     const cinemaButtons = document.querySelectorAll('.page2-point');
     cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Tudo') {
+      if (button.getAttribute('category') === 'Arte & Arquitetura', 'Centros de Compras', 'Eventos Culturais & Festivais', 'Fortes', 'História & Cultura', 'Mercados & Feiras', 'Parques & Áreas Verdes', 'Pontes & Canais', 'Praias', 'Turismo Religioso') {
         button.style.display = 'flex';
       } else {
         button.style.display = 'none';
