@@ -226,11 +226,15 @@
 .guide {
     display: flex;
     width: 97vw; height: 4vh;
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(55, 55, 55);
     border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
 }
 .whatsapp {
     display: flex;
     width: 97vw; height: 4vh;
     background-color: transparent;
+    text-align: center;
 }
