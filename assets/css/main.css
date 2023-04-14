@@ -204,15 +204,13 @@
 }
 .page2-point {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     left: 0; top: 0;
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     justify-content: center; align-items: center;
 }
 .dot-circle-class {
-    display: flex;
-    flex-direction: row;
     position: absolute;
     top: 0;
     left: 0;
@@ -232,8 +230,6 @@
     display: flex;
 }
 .map-marker-alt-class {
-    display: flex;
-    flex-direction: row;
     position: absolute;
     top: 0;
     right: 0;
