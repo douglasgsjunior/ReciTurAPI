@@ -211,4 +211,17 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 1.5%;
+    transform: translateY(100%);
+    animation-name: slide-down;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+@keyframes slide-down {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
