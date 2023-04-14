@@ -206,7 +206,7 @@
     color: rgba(0, 0, 0, 1); background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center; align-items: center;
-    width: 100vw; height: 6vh;
+    width: 100vw; height: 10vh;
 }
 .dot-circle-class {
     display: flex;
