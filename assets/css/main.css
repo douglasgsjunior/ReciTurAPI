@@ -210,13 +210,11 @@
     align-items: center;
 }
 .dot-circle-class {
-    width: 10%;
-    height: 100%;
+    display: flex;
 }
 .point-name-class,
 .point-subname-class {
   display: flex;
-  flex-direction: column;
 }
 .list-line {
     display: flex;
