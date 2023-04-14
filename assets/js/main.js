@@ -74,57 +74,37 @@ function initMap() {
   const arrowNextButton = document.querySelector('.arrow-next');
   const arrowBackButton = document.querySelector('.arrow-back');
   
+  function updateDisplay(category) {
+    const buttons = document.querySelectorAll('.page2-point');
+    buttons.forEach(button => {
+      if (category === 'Category1' && button.getAttribute('category') === 'Cinema') {
+        button.style.display = 'flex';
+      } else {
+        button.style.display = 'flex';
+      }
+    });
+  }
+  
   arrowNextButton.addEventListener('click', () => {
-  currentCategoryIndex++;
-  if (currentCategoryIndex >= carousel.length) {
-    currentCategoryIndex = 0;
-  }
-  cardText.textContent = carousel[currentCategoryIndex];
-
-  if (carousel[currentCategoryIndex] === 'Category1') {
-    // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
-    const cinemaButtons = document.querySelectorAll('.page2-point');
-    cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Cinema') {
-        button.style.display = 'flex';
-      } else {
-        button.style.display = 'none';
-      }
-    });
-  } else {
-    // exibir todos os botões da classe page2-point
-    const allButtons = document.querySelectorAll('.page2-point');
-    allButtons.forEach(button => {
-      button.style.display = 'flex';
-    });
-  }
-});
-
-arrowBackButton.addEventListener('click', () => {
-  currentCategoryIndex--;
-  if (currentCategoryIndex < 0) {
-    currentCategoryIndex = carousel.length - 1;
-  }
-  cardText.textContent = carousel[currentCategoryIndex];
-
-  if (carousel[currentCategoryIndex] === 'Category1') {
-    // exibir apenas os botões da classe page2-point que possuem a categoria "Cinema"
-    const cinemaButtons = document.querySelectorAll('.page2-point');
-    cinemaButtons.forEach(button => {
-      if (button.getAttribute('category') === 'Cinema') {
-        button.style.display = 'flex';
-      } else {
-        button.style.display = 'none';
-      }
-    });
-  } else {
-    // exibir todos os botões da classe page2-point
-    const allButtons = document.querySelectorAll('.page2-point');
-    allButtons.forEach(button => {
-      button.style.display = 'flex';
-    });
-  }
-});
+    currentCategoryIndex++;
+    if (currentCategoryIndex >= carousel.length) {
+      currentCategoryIndex = 0;
+    }
+    cardText.textContent = carousel[currentCategoryIndex];
+  
+    updateDisplay(carousel[currentCategoryIndex]);
+  });
+  
+  arrowBackButton.addEventListener('click', () => {
+    currentCategoryIndex--;
+    if (currentCategoryIndex < 0) {
+      currentCategoryIndex = carousel.length - 1;
+    }
+    cardText.textContent = carousel[currentCategoryIndex];
+  
+    updateDisplay(carousel[currentCategoryIndex]);
+  });
+  
 
   // Itere sobre os pontos e adicione os marcadores ao mapa
   points.forEach((point) => {
