@@ -549,14 +549,14 @@ arrowBackButton.addEventListener('click', () => {
     // Crie um novo botão para mostrar as informações do ponto
     const newButton = document.createElement("button");
     newButton.innerHTML = `
-      <div>
-        <a href="#" class="fa fa-link"></a>
+      <div class="">
+        <a href="#" class="fas fa-dot-circle"></a>
       </div>
-      <div>
+      <div class="">
         ${point.name}
       </div>
-      <div>
-        <a href="#" class="fa fa-link"></a>
+      <div class="">
+        <a href="#" class="fas fa-map-marker-alt"></a>
       </div>
     `;
     newButton.className = 'page2-point'
