@@ -204,7 +204,7 @@
 }
 .page2-point {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     align-items: center;
@@ -218,6 +218,8 @@
 }
 .list-line {
     display: flex;
+    background-color: rgb(127, 127, 127);
+    width: 90%; height: 1px; 
 }
 .map-marker-alt-class {
     display: flex;
