@@ -548,7 +548,13 @@ arrowBackButton.addEventListener('click', () => {
 
     // Crie um novo botão para mostrar as informações do ponto
     const newButton = document.createElement("button");
-    newButton.innerHTML = point.name; // Alteração aqui
+    newButton.innerHTML = `
+      <div>
+        <a href="#" class="fa fa-link"></a>
+        <a href="#" class="fa fa-download"></a>
+      </div>
+      ${point.name}
+    `;
     newButton.className = 'page2-point'
     newButton.setAttribute('category', point.category); // adicionando o atributo "category"
     newButton.id = point.name.replace(/\s+/g, '-').toLowerCase() + '-button'; // Adição do ID
