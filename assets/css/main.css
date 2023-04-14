@@ -204,7 +204,7 @@
 }
 .page2-point {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100vw; height: 6vh;
     background-color: rgb(255, 255, 255);
     align-items: center;
