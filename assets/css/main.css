@@ -230,3 +230,8 @@
     cursor: pointer;
     border-radius: 5px;
 }
+.whatsapp {
+    display: flex;
+    width: 97vw; height: 4vh;
+    background-color: transparent;
+}
