@@ -76,13 +76,13 @@ function initMap() {
     {
       name: "Rec'N'Play",
       info: "PE, 50030-230",
-      position: { lat: 8.0554027, lng: -34.8709001 },
+      position: { lat: -8.0555435, lng: -34.8806205 },
       category: "Eventos Culturais & Festivais"
     },
     {
       name: "Forte do Brum",
       info: "Praça da Comunidade Luso Brasileira, Recife - PE, 50030-270",
-      position: { lat: -8.0531008, lng: -34.8736803 },
+      position: { lat: -8.0530861, lng: -34.8713945 },
       category: "Fortes"
     },
     {
