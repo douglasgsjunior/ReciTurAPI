@@ -62,63 +62,63 @@ function initMap() {
   // Defina as informações dos pontos
   const points = [
     {
-      name: "Meu novo ponto 1",
-      info: "Esta é uma descrição do meu novo ponto 1.",
-      position: { lat: -8.056812, lng: -34.880047 },
+      name: "Instituto Ricardo Brennand",
+      info: "R. Mário Campelo, 700 - Várzea, Recife - PE, 50741-904",
+      position: { lat: -8.0663237, lng: -34.9658326 },
       category: "Arte & Arquitetura"
     },
     {
-      name: "Meu novo ponto 2",
-      info: "Esta é uma descrição do meu novo ponto 2.",
-      position: { lat: -8.060012, lng: -34.881347 },
+      name: "Shopping RioMar Recife",
+      info: "Av. República do Líbano, 251 - Pina, Recife - PE, 51110-160",
+      position: { lat: -8.086054, lng: -34.8973235 },
       category: "Centros de Compras"
     },
     {
-      name: "Meu novo ponto 3",
-      info: "Esta é uma descrição do meu novo ponto 3.",
-      position: { lat: -8.075112, lng: -34.893047 },
+      name: "Rec'N'Play",
+      info: "PE, 50030-230",
+      position: { lat: -8.0555435, lng: -34.8806205 },
       category: "Eventos Culturais & Festivais"
     },
     {
-      name: "Meu novo ponto 4",
-      info: "Esta é uma descrição do meu novo ponto 4.",
-      position: { lat: -8.081812, lng: -34.810047 },
+      name: "Forte do Brum",
+      info: "Praça da Comunidade Luso Brasileira, Recife - PE, 50030-270",
+      position: { lat: -8.0531008, lng: -34.8736803 },
       category: "Fortes"
     },
     {
-      name: "Meu novo ponto 5",
-      info: "Esta é uma descrição do meu novo ponto 5.",
-      position: { lat: -8.079812, lng: -34.900047 },
+      name: "Marco Zero",
+      info: "Praça Barão do Rio Branco, Recife - PE, 50020-360",
+      position: { lat: -8.063167, lng: -34.8736584 },
       category: "História & Cultura"
     },
     {
-      name: "Meu novo ponto 6",
-      info: "Esta é uma descrição do meu novo ponto 6.",
-      position: { lat: -8.085812, lng: -34.780047 },
+      name: "Mercado de São José",
+      info: "Praça Dom Vital - São José, Recife - PE, 50020-280",
+      position: { lat: -8.0685349, lng: -34.8802349 },
       category: "Mercados & Feiras"
     },
     {
-      name: "Meu novo ponto 7",
-      info: "Esta é uma descrição do meu novo ponto 7.",
-      position: { lat: -8.056812, lng: -34.880047 },
+      name: "Parque Dona Lindu",
+      info: "Av. Boa Viagem, s/n - Boa Viagem, Recife - PE, 51030-010",
+      position: { lat: -8.1412392, lng: -34.9068031 },
       category: "Parques & Áreas Verdes"
     },
     {
-      name: "Meu novo ponto 8",
-      info: "Esta é uma descrição do meu novo ponto 8.",
-      position: { lat: -8.056812, lng: -34.880047 },
+      name: "Ponte Maurício de Nassau",
+      info: "Pte. Maurício de Nassau, Recife - PE, 50030-230",
+      position: { lat: -8.063964, lng: -34.8780951 },
       category: "Pontes & Canais"
     },
     {
-      name: "Meu novo ponto 9",
-      info: "Esta é uma descrição do meu novo ponto 9.",
-      position: { lat: -8.056812, lng: -34.880047 },
+      name: "Praia de Boa Viagem",
+      info: "Boa Viagem, Recife - PE",
+      position: { lat: -8.1308813, lng: -34.9186976 },
       category: "Praias"
     },
     {
-      name: "Meu novo ponto 10",
-      info: "Esta é uma descrição do meu novo ponto 10.",
-      position: { lat: -8.056812, lng: -34.880047 },
+      name: "Basílica e Convento de Nossa Senhora do Carmo",
+      info: "Av. Dantas Barreto, 646 - Santo Antônio, Recife - PE, 50020-000",
+      position: { lat: -8.065947, lng: -34.8823761 },
       category: "Turismo Religioso"
     },
   ];
