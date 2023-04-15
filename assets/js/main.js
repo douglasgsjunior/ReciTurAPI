@@ -26,6 +26,8 @@ navItems.forEach((item) => {
     });
 });
 
+let watchPositionEnabled = true;
+
 function initMap() {
   const center = { lat: -8.0555435, lng: -34.8806205 };
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -623,31 +625,17 @@ arrowBackButton.addEventListener('click', () => {
     });
   });
 
-  if (navigator.geolocation) {
+  const toggleWatchPositionButton = document.getElementById("toggleWatchPositionButton");
+  toggleWatchPositionButton.addEventListener("click", () => {
+    watchPositionEnabled = !watchPositionEnabled;
+  });
+
+  if (watchPositionEnabled && navigator.geolocation) {
     const options = {
       enableHighAccuracy: true,
       timeout: 10000,
       maximumAge: 5000
     };
-    let firstUpdate = true;
-    navigator.geolocation.watchPosition(
-      (position) => {
-        const userLocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-        userMarker.setPosition(userLocation);
-        if (firstUpdate) {
-          map.setCenter(userLocation);
-          firstUpdate = false;
-        }
-      },
-      (error) => {
-        console.log("Error getting location:", error);
-      },
-      options
-    );
-
     const userMarker = new google.maps.Marker({
       map: map,
       icon: {
