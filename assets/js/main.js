@@ -26,8 +26,6 @@ navItems.forEach((item) => {
     });
 });
 
-let watchPositionEnabled = true;
-
 function initMap() {
   const center = { lat: -8.0555435, lng: -34.8806205 };
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -625,12 +623,9 @@ arrowBackButton.addEventListener('click', () => {
     });
   });
 
-  const toggleWatchPositionButton = document.getElementById("toggleWatchPositionButton");
-  toggleWatchPositionButton.addEventListener("click", () => {
-    watchPositionEnabled = !watchPositionEnabled;
-  });
+  let watcherId = null;
 
-  if (watchPositionEnabled && navigator.geolocation) {
+  if (navigator.geolocation) {
     const options = {
       enableHighAccuracy: true,
       timeout: 10000,
@@ -642,7 +637,8 @@ arrowBackButton.addEventListener('click', () => {
         url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
       }
     });
-    navigator.geolocation.watchPosition(
+
+    watcherId = navigator.geolocation.watchPosition(
       (position) => {
         const userLocation = {
           lat: position.coords.latitude,
@@ -656,11 +652,13 @@ arrowBackButton.addEventListener('click', () => {
       },
       options
     );
+
     const clearLocationButton = document.getElementById("clearLocationButton");
 
     clearLocationButton.addEventListener("click", () => {
       userMarker.setPosition(null);
       map.setCenter(center);
+      navigator.geolocation.clearWatch(watcherId);
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
