@@ -629,6 +629,25 @@ arrowBackButton.addEventListener('click', () => {
       timeout: 10000,
       maximumAge: 5000
     };
+    let firstUpdate = true;
+    navigator.geolocation.watchPosition(
+      (position) => {
+        const userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        userMarker.setPosition(userLocation);
+        if (firstUpdate) {
+          map.setCenter(userLocation);
+          firstUpdate = false;
+        }
+      },
+      (error) => {
+        console.log("Error getting location:", error);
+      },
+      options
+    );
+
     const userMarker = new google.maps.Marker({
       map: map,
       icon: {
