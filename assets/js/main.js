@@ -76,7 +76,7 @@ function initMap() {
     {
       name: "Rec'N'Play",
       info: "PE, 50030-230",
-      position: { lat: -8.0555435, lng: -34.8806205 },
+      position: { lat: 8.0554027, lng: -34.8709001 },
       category: "Eventos Culturais & Festivais"
     },
     {
